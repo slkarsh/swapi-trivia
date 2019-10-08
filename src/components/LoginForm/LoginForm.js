@@ -19,6 +19,10 @@ class LoginForm extends Component {
         })
     }
 
+    handleClick = () => {
+        //this.props.someMethod()
+    }
+
 
     render() {
         return (
@@ -49,7 +53,7 @@ class LoginForm extends Component {
 		        <option value='intermediate'>Intermediate</option>
 		        <option value='expert'>Expert</option>
 	        </select>
-            <button type='button'>Submit</button>
+            <button type='button' onClick={this.props.link}>Submit</button>
             </form>
         )
     }
