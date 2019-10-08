@@ -1,3 +1,3 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import LoginForm from './LoginForm';
+import MovieCard from './MovieCard';
