@@ -10,3 +10,23 @@ export const fetchFilms = () => {
       return filmData;
     })
 };
+
+
+// const getCharacters = charactersUrlArray => {
+  //response.characters - array of URLS
+  //from each character, need to display: name, homeworld, pop of homrworld, species, related films
+  //name: string
+  //homeworld: url
+  //pop of homeworld: fetch from homeworld url, key is population, value is string
+  //species: url -> key "name" value is string of species type (like "human")
+  //films: url -> go into each URL and grab the title
+
+// }
+
+
+const getCharacterName = characterUrl => {
+  fetch(characterUrl)
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .then(response => console.log(response.name))
+}

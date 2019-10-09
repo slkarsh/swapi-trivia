@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './LoginForm.scss';
-
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 class LoginForm extends Component {
     constructor() {
@@ -53,6 +53,9 @@ class LoginForm extends Component {
 		        <option value='intermediate'>Intermediate</option>
 		        <option value='expert'>Expert</option>
 	        </select>
+            <Link> 
+                //wrap our button in a Link component
+            </Link>
             <button type='button' onClick={this.props.link}>Submit</button>
             </form>
         )
