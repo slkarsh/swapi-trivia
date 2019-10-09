@@ -32,6 +32,7 @@ class LoginForm extends Component {
                 <input
                     type='text'
                     name='name'
+                    className='input-1'
                     value={this.state.name}
                     placeholder='Enter name here'
                     onChange={(e) => this.handleChange(e)}
@@ -40,6 +41,7 @@ class LoginForm extends Component {
                 <input
                     type='text'
                     name='quote'
+                    className='input-2'
                     value={this.state.quote}
                     placeholder='Enter your favorite Star Wars quote'
                     onChange={(e) => this.handleChange(e)}
