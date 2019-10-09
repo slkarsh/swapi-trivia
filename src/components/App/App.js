@@ -22,18 +22,18 @@ class App extends Component {
 
   render() {
     return (
-      // <Router>
-      //   <div className="App">
-      //     <Route exact path='/' render={
-      //       () => {
-      //         return (<LoginForm link={<Link to='/moviesContainer'></Link>} />)
-      //       }
-      //     } />
-      //     <Route exact path='/moviesContainer' component={MoviesContainer} />
-      //     <h1>SWAPI Trivia</h1>
-      //   </div>
-      // </Router>
-      <MoviesContainer films={this.state.films} />
+      <Router>
+        <div className="App">
+          <h1>SWAPI TRIVIA</h1>
+          <Route exact path='/' render={
+            () => {
+              return (<LoginForm link={<Link to='/moviesContainer'></Link>} />)
+            }
+          } />
+          <Route exact path='/moviesContainer' component={MoviesContainer} />
+        </div>
+      </Router>
+      // <MoviesContainer films={this.state.films} />
     );
   }
 }
