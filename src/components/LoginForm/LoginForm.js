@@ -28,6 +28,7 @@ class LoginForm extends Component {
     render() {
         return (
             <form>
+                <h1>SWAPI Trivia</h1>
                 <label>Name</label>
                 <input
                     type='text'

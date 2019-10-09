@@ -4,6 +4,7 @@ import LoginForm from '../LoginForm/LoginForm'
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
+import NavBar from '../NavBar/NavBar';
 import { fetchFilms } from '../../apis/apiCalls';
 
 class App extends Component {
@@ -29,10 +30,10 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+          <NavBar name={this.state.userInfo.name} quote={this.state.userInfo.quote} skill={this.state.userInfo.skillLevel} />
           <Route exact path='/' render={
             () => { return (<LoginForm addUserInfo={this.addUserInfo} />) }
           } />
-          <h1>SWAPI Trivia</h1>
           <Route exact path='/moviesContainer' render={
             () => { return (<MoviesContainer films={this.state.films} />) }
           } />
