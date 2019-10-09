@@ -25,8 +25,26 @@ export const fetchFilms = () => {
 
 
 const getCharacterName = characterUrl => {
-  fetch(characterUrl)
+  return fetch(characterUrl)
     .then(response => response.json())
     .then(response => console.log(response))
     .then(response => console.log(response.name))
+}
+
+const getHomeworld = homeworldUrl => {
+  return fetch(homeworldUrl)
+    .then(response => response.json())
+    .then(homeworld => {
+      const { name, population } = homeworld
+      return { name, population }
+    })
+}
+
+const getSpecies = speciesUrl => {
+  return fetch(speciesUrl)
+    .then(response => response.json())
+    .then(species => {
+      const { name } = species
+      return { name }
+    })
 }
