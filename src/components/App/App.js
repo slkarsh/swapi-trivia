@@ -10,7 +10,8 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      films: []
+      films: [],
+      userInfo: []
     }
   }
 
@@ -20,20 +21,23 @@ class App extends Component {
     }))
   }
 
+  addUserInfo = (userData) => {
+    this.setState({ userInfo: userData })
+  }
+
   render() {
     return (
       <Router>
         <div className="App">
-          <h1>SWAPI TRIVIA</h1>
           <Route exact path='/' render={
-            () => {
-              return (<LoginForm link={<Link to='/moviesContainer'></Link>} />)
-            }
+            () => { return (<LoginForm addUserInfo={this.addUserInfo} />) }
           } />
-          <Route exact path='/moviesContainer' component={MoviesContainer} />
+          <h1>SWAPI Trivia</h1>
+          <Route exact path='/moviesContainer' render={
+            () => { return (<MoviesContainer films={this.state.films} />) }
+          } />
         </div>
       </Router>
-      // <MoviesContainer films={this.state.films} />
     );
   }
 }

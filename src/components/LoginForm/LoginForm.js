@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './LoginForm.scss';
-
+import { BrowserRouter as Router, Link } from 'react-router-dom';
+import Route from 'react-router-dom/Route';
 
 class LoginForm extends Component {
     constructor() {
@@ -20,7 +21,7 @@ class LoginForm extends Component {
     }
 
     handleClick = () => {
-        //this.props.someMethod()
+        this.props.addUserInfo(this.state)
     }
 
 
@@ -55,10 +56,10 @@ class LoginForm extends Component {
                     <option value='intermediate'>Intermediate</option>
                     <option value='expert'>Expert</option>
                 </select>
-                <div>
-                    <button type='button' onClick={this.props.link}>Submit</button>
-                </div>
-            </form>
+                <Link to="/moviesContainer" >
+                    <button type='button' onClick={this.handleClick}>Submit</button>
+                </Link>
+            </form >
         )
     }
 }
