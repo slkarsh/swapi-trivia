@@ -11,24 +11,52 @@ export const fetchFilms = () => {
     })
 };
 
-
-// const getCharacters = charactersUrlArray => {
-  //response.characters - array of URLS
-  //from each character, need to display: name, homeworld, pop of homrworld, species, related films
-  //name: string
-  //homeworld: url
-  //pop of homeworld: fetch from homeworld url, key is population, value is string
-  //species: url -> key "name" value is string of species type (like "human")
-  //films: url -> go into each URL and grab the title
-
+//characters to be array of URL
+// export const getCharacters = film => {
+//   return fetch(film)
+//     .then(response => response.json())
+//     .then(film => {film.characters)
+//     .then(characters => {
+//       const characterInfo = characters.map(character => {
+//        return getCharacter(character).then(character => ({
+//           name: character[0],
+//           homeworld: character[1],
+//           species: character[2],
+//           relatedFilms: character[3]
+//     })
+//   )
+//   })
+//   return Promise.all(characterInfo);
 // }
+// )}
 
+export const getCharacters = filmUrl => {
+  return fetch(filmUrl)
+    .then(response => response.json())
+    .then(film => console.log('characters', film))
+    .then(film => {
+      const characterInfo = film.characters.map(character => {
+        return getCharacter(character).then(character => ({
+          name: character[0],
+          homeworld: character[1],
+          species: character[2],
+          relatedFilms: character[3]
+        }))
+      })
+      return Promise.all(characterInfo)
+    })
+}
 
-const getCharacterName = characterUrl => {
+export const getCharacter = characterUrl => {
   return fetch(characterUrl)
     .then(response => response.json())
-    .then(response => console.log(response))
-    .then(response => console.log(response.name))
+    .then(character => {
+      const {name} = character
+      const home = getHomeworld(character.homeworld)
+      const speciesName = getSpeciesData(character.species).then(x => [...x])
+      const relatedMovies = getRelatedFilms(character.films)
+      return Promise.all([name, home, speciesName, relatedMovies])
+    })
 }
 
 const getHomeworld = homeworldUrl => {
@@ -40,11 +68,28 @@ const getHomeworld = homeworldUrl => {
     })
 }
 
+const getSpeciesData = speciesArray => {
+  const speciesInfo = speciesArray.map(speciesType => {
+    return getSpecies(speciesType).then(name => name)
+  })
+  return Promise.all(speciesInfo)
+}
+
 const getSpecies = speciesUrl => {
   return fetch(speciesUrl)
     .then(response => response.json())
-    .then(species => {
-      const { name } = species
-      return { name }
-    })
+    .then(species => species.name)
+}
+
+const getRelatedFilms = filmsArray => {
+  const relatedFilms = filmsArray.map(film => {
+    return getFilmName(film).then(title => title)
+  })
+  return Promise.all(relatedFilms)
+}
+
+const getFilmName = filmUrl => {
+  return fetch(filmUrl)
+    .then(response => response.json())
+    .then(film => film.title)
 }
