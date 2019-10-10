@@ -4,8 +4,9 @@ import LoginForm from '../LoginForm/LoginForm'
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
+import { fetchFilms, getCharacters } from '../../apis/apiCalls';
 import NavBar from '../NavBar/NavBar';
-import { fetchFilms } from '../../apis/apiCalls';
+
 
 class App extends Component {
   constructor() {
@@ -20,6 +21,9 @@ class App extends Component {
     fetchFilms().then(response => this.setState({
       films: response
     }))
+    getCharacters('https://swapi.co/api/films/1').then(response => console.log(response))
+    // getCharacter('https://swapi.co/api/people/1/')
+    // getFilms().then(response => console.log(response))
   }
 
   addUserInfo = (userData) => {
