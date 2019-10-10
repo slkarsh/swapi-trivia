@@ -33,7 +33,7 @@ export const fetchFilms = () => {
 export const getCharacters = filmUrl => {
   return fetch(filmUrl)
     .then(response => response.json())
-    .then(film => console.log('characters', film))
+    // .then(film => console.log('characters', film))
     .then(film => {
       const characterInfo = film.characters.map(character => {
         return getCharacter(character).then(character => ({
