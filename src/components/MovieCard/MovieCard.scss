@@ -1,0 +1,24 @@
+section {
+    background-color: rgb(201, 198, 198);
+    height: 250px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+
+h3 {
+    font-size: 32px;
+    margin: 5px 20px;
+}
+
+p {
+    margin: 5px 20px;
+}
+
+.character-link {
+    margin: 5px 20px;
+    text-decoration: none;
+    color: rgb(119, 106, 32);
+}

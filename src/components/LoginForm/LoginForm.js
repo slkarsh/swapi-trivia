@@ -58,7 +58,7 @@ class LoginForm extends Component {
                     <option value='intermediate'>Intermediate</option>
                     <option value='expert'>Expert</option>
                 </select>
-                <Link to="/moviesContainer" >
+                <Link to="/movies" >
                     <button type='button' onClick={this.handleClick}>Submit</button>
                 </Link>
             </form >

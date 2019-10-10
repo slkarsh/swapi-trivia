@@ -17,7 +17,7 @@ const NavBar = ({name, quote, skill}) => {
             <footer>
                 <ul>
                 <li>
-                    <Link to='/moviesContainer'>
+                    <Link to='/movies'>
                         Movies
                     </Link>
                 </li>
