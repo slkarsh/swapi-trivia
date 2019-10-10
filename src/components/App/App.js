@@ -43,7 +43,10 @@ class App extends Component {
             () => { return (<MoviesContainer films={this.state.films} />) }
           } />
           <Route exact path='/movies/:episode' render={({match}) => {
-           return <SelectedMovie />
+            const { episode } = match.params
+            const filteredMovie = this.state.films.find(film => film.episode_id === parseInt(episode))
+            console.log(filteredMovie)
+           return <SelectedMovie movie={this.state.films.find(film => film.episode_id === parseInt(episode))}/>
           } } />
         </div>
       </Router>

@@ -3,12 +3,12 @@ import QuoteContainer from '../QuoteContainer/QuoteContainer';
 import CharactersContainer from '../CharactersContainer/CharactersContainer';
 
 
-const SelectedMovie = () => {
+const SelectedMovie = ({ movie }) => {
     return (
-        <>
-            <QuoteContainer />
+        <main className='selected-movie'>
+            <QuoteContainer movie={movie} />
             <CharactersContainer />
-        </>
+        </main>
     )
 }
 

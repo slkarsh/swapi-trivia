@@ -1,9 +1,13 @@
 import React from 'react';
 import './QuoteContainer.scss';
+import Quote from '../Quote/Quote'
 
-const QuoteContainer = () => {
+const QuoteContainer = ({ movie }) => {
     return (
-        <h3>Quote Container</h3>
+        <section className='quote-container'>
+            <h3>{movie.title}</h3>
+            <Quote />
+        </section>
     )
 }
 
