@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './LoginForm.scss';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
-import Route from 'react-router-dom/Route';
 
 
 class LoginForm extends Component {

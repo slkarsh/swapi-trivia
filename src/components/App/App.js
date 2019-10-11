@@ -6,7 +6,8 @@ import Route from 'react-router-dom/Route';
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import { fetchFilms, getCharacters } from '../../apis/apiCalls';
 import NavBar from '../NavBar/NavBar';
-import SelectedMovie from '../SelectedMovie/SelectedMovie'
+import SelectedMovie from '../SelectedMovie/SelectedMovie';
+import Favorites from '../Favorites/Favorites';
 
 
 class App extends Component {
@@ -36,7 +37,8 @@ class App extends Component {
       to Jakku, where an old ally
       has discovered a clue to
       Luke's whereabouts....` }, { title: 'hello2', episode_id: 2, release_date: 2002 }, { title: 'hello3', episode_id: 3, release_date: 2003 }, { title: 'hello4', episode_id: 4, release_date: 2005 }],
-      userInfo: []
+      userInfo: [],
+      favorites: []
     }
   }
 
@@ -60,6 +62,9 @@ class App extends Component {
           <NavBar name={this.state.userInfo.name} quote={this.state.userInfo.quote} skill={this.state.userInfo.skillLevel} />
           <Route exact path='/' render={
             () => { return (<LoginForm addUserInfo={this.addUserInfo} />) }
+          } />
+          <Route exact path='/favorites' render={
+            () => { return (<Favorites characters={this.state.favorites} />) }
           } />
           <Route exact path='/movies' render={
             () => { return (<MoviesContainer films={this.state.films} />) }
