@@ -13,7 +13,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      films: [{title: 'hello', episode_id: 1, release_date: 2001 }, {title: 'hello2', episode_id: 2, release_date: 2002 }, {title: 'hello3', episode_id: 3, release_date: 2003 }, {title: 'hello4', episode_id: 4, release_date: 2005 }],
+      films: [{ title: 'hello', episode_id: 1, release_date: 2001 }, { title: 'hello2', episode_id: 2, release_date: 2002 }, { title: 'hello3', episode_id: 3, release_date: 2003 }, { title: 'hello4', episode_id: 4, release_date: 2005 }],
       userInfo: []
     }
   }
@@ -22,9 +22,9 @@ class App extends Component {
   //   fetchFilms().then(response => this.setState({
   //     films: response
   //   }))
-    // getCharacters('https://swapi.co/api/films/1').then(response => console.log(response))
-    // getCharacter('https://swapi.co/api/people/1/')
-    // getFilms().then(response => console.log(response))
+  // getCharacters('https://swapi.co/api/films/1').then(response => console.log(response))
+  // getCharacter('https://swapi.co/api/people/1/')
+  // getFilms().then(response => console.log(response))
   // }
 
   addUserInfo = (userData) => {
@@ -42,12 +42,12 @@ class App extends Component {
           <Route exact path='/movies' render={
             () => { return (<MoviesContainer films={this.state.films} />) }
           } />
-          <Route exact path='/movies/:episode' render={({match}) => {
+          <Route exact path='/movies/:episode' render={({ match }) => {
             const { episode } = match.params
             const filteredMovie = this.state.films.find(film => film.episode_id === parseInt(episode))
             console.log(filteredMovie)
-           return <SelectedMovie movie={this.state.films.find(film => film.episode_id === parseInt(episode))}/>
-          } } />
+            return <SelectedMovie movie={this.state.films.find(film => film.episode_id === parseInt(episode))} />
+          }} />
         </div>
       </Router>
     );

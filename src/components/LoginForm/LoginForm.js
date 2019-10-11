@@ -54,13 +54,15 @@ class LoginForm extends Component {
                     onChange={(e) => this.handleChange(e)}
                 >
                     <option value=''>Select Skill Level</option>
-                    <option value='novice'>Novicee</option>
+                    <option value='novice'>Novice</option>
                     <option value='intermediate'>Intermediate</option>
                     <option value='expert'>Expert</option>
                 </select>
-                <Link to="/movies" >
-                    <button type='button' onClick={this.handleClick}>Submit</button>
-                </Link>
+                <div>
+                    <Link to="/movies" >
+                        <button type='button' onClick={this.handleClick}>Submit</button>
+                    </Link>
+                </div>
             </form >
         )
     }
