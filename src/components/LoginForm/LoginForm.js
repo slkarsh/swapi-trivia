@@ -30,6 +30,7 @@ class LoginForm extends Component {
         return (
             <form>
                 <h1>SWAPI Trivia</h1>
+                <h4>Join the force</h4>
                 <label>Name</label>
                 <input
                     type='text'

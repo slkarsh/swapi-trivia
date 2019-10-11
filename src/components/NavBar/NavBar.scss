@@ -7,12 +7,11 @@ nav {
 
 header {
     display: flex;
-    width: 100%;
     height: 25px;
     color: black;
     background-color: rgb(113, 113, 113);
     align-items: center;
-    border-bottom: 2px solid rgb(65, 115, 206);
+    border-bottom: 2px solid rgb(35, 63, 116);
 }
 
 .user-info-nav {
@@ -20,7 +19,7 @@ header {
         width: 100%;
 
         li {
-            color: rgb(255, 255, 255);
+            color: rgb(101, 101, 101);
             margin-right: 300px;
         }
     }
@@ -29,14 +28,15 @@ header {
 .user-info {
     margin-right: 50px;
 
-    // span {
-    //     font-weight: 600px;
-    // }
+    span {
+        font-weight: 600;
+        color: #b0eaff;
+    }
 }
 
 ul {
     display: flex;
-    color: white;
+    color: rgb(199, 199, 199);
     padding: 0 40px;
     width: 100%;
     font-size: 18px;
@@ -47,7 +47,6 @@ ul {
 
     div {
         display: flex;
-        width: 50%;
     }
 }
 
@@ -64,7 +63,7 @@ footer {
 
 .nav-link {
     text-decoration: none;
-    color: white;
+    color: rgb(210, 210, 210);
     font-size: 20px;
     transition: .2s;
     margin-right: 30px;

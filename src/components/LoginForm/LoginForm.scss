@@ -4,9 +4,15 @@ h1 {
   font-family: 'SF Distant Galaxy'
 }
 
+h4 {
+  width: 100%;
+  text-align: center;
+  padding-right: 10px;
+}
+
 form {
   width: 500px;
-  height: 550px;
+  height: 570px;
   margin: auto;
   display: flex;
   flex-direction: column;
