@@ -1,9 +1,9 @@
 import React from 'react';
 import './CharacterCard.scss';
 
-const CharacterCard = () => {
+const CharacterCard = ({ info }) => {
     return (
-        <h1>Hello, Character!</h1>
+        <h1>info.name</h1>
     )
 }
 

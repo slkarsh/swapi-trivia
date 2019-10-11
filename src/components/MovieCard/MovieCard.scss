@@ -1,8 +1,8 @@
 .movie-card {
-    background-color: #383838;
-    height: 200px;
-    border-radius: 3px;
+    background: linear-gradient(to top left, rgb(75, 75, 75), #2d2d2d);
+    border-radius: 8px;
     display: flex;
+    border: solid rgb(92, 92, 92) 3px;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
@@ -11,7 +11,7 @@
 h3 {
     font-size: 32px;
     margin: 20px 30px 10px 30px;
-    border-bottom: 2px solid rgb(155, 155, 155);
+    border-bottom: 3px solid rgba(155, 155, 155, 0.233);
     width: 85%;
     padding-bottom: 5px;
     text-align: left;
@@ -19,6 +19,7 @@ h3 {
 
 .movie-card-text {
     margin: 5px 30px;
+    color: white;
 }
 
 .character-link {

@@ -5,8 +5,11 @@ import Quote from '../Quote/Quote'
 const QuoteContainer = ({ movie }) => {
     return (
         <section className='quote-container'>
-            <h3>{movie.title}</h3>
-            <Quote />
+            <Quote
+                episode={movie.episode_id}
+                title={movie.title}
+                description={movie.description}
+            />
         </section>
     )
 }

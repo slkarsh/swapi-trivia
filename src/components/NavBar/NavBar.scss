@@ -9,9 +9,9 @@ header {
     display: flex;
     height: 25px;
     color: black;
-    background-color: rgb(113, 113, 113);
+    background: linear-gradient(#575757, #7b7b7b);
     align-items: center;
-    border-bottom: 2px solid rgb(35, 63, 116);
+    border-bottom: 1px solid rgb(70, 70, 70);
 }
 
 .user-info-nav {
@@ -19,7 +19,7 @@ header {
         width: 100%;
 
         li {
-            color: rgb(101, 101, 101);
+            color: rgb(138, 138, 138);
             margin-right: 300px;
         }
     }
@@ -30,7 +30,7 @@ header {
 
     span {
         font-weight: 600;
-        color: #b0eaff;
+        color: #b8ecff;
     }
 }
 
@@ -57,7 +57,7 @@ li {
 footer {
     display: flex;
     height: 35px;
-    background-color: #383838;
+    background: linear-gradient(#5b5b5b, #1c1c1c);
     font-weight: 600;
 }
 

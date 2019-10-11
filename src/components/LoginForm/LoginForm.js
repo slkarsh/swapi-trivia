@@ -55,9 +55,9 @@ class LoginForm extends Component {
                     onChange={(e) => this.handleChange(e)}
                 >
                     <option value=''>Select Skill Level</option>
-                    <option value='novice'>Novice</option>
-                    <option value='intermediate'>Intermediate</option>
-                    <option value='expert'>Expert</option>
+                    <option value='Novice'>Novice</option>
+                    <option value='Intermediate'>Intermediate</option>
+                    <option value='Expert'>Expert</option>
                 </select>
                 <div>
                     <Link to="/movies" >
