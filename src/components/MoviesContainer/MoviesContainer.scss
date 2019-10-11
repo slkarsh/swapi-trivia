@@ -3,4 +3,5 @@ main {
     grid-gap: 50px 50px;
     padding: 15px 40px;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    overflow: scroll;
 }
