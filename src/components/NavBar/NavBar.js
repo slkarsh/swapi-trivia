@@ -1,31 +1,38 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './NavBar.scss';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
-import Route from 'react-router-dom/Route';
+import { Link } from 'react-router-dom';
 
-
-const NavBar = ({name, quote, skill}) => {
+const NavBar = ({ name, quote, skill }) => {
     return (
         <nav>
             <header>
                 <ul>
-                    <li>{name}</li>
-                    <li>{quote}</li>
-                    <li>{skill}</li>
+                    <div className='user-info-nav'>
+                        <li className='user-info'>Name: <span>{name}</span></li>
+                        <li className='user-info'>Favorite Quote: <span>{quote}</span></li>
+                        <li className='user-info'>Skill Level: <span>{skill}</span></li>
+                    </div>
                 </ul>
             </header>
             <footer>
                 <ul>
-                <li>
-                    <Link to='/movies'>
-                        Movies
-                    </Link>
-                </li>
-                <li>
-                    <Link to='/favorites'>
-                        Favorites
-                    </Link>
-                </li>
+                    <div>
+                        <li>
+                            <Link to='/movies' className='nav-link'>
+                                Movies
+                        </Link>
+                        </li>
+                        <li>
+                            <Link to='/favorites' className='nav-link'>
+                                Favorites
+                        </Link>
+                        </li>
+                    </div>
+                    <li>
+                        <Link to='/' className='nav-link-logout'>
+                            Log out
+                        </Link>
+                    </li>
                 </ul>
             </footer>
         </nav>
