@@ -1,5 +1,5 @@
 nav {
-    height: 150px;
+    height: 110px;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -7,21 +7,47 @@ nav {
 
 header {
     display: flex;
-    width: 100%;
     height: 25px;
-    background-color: rgb(69, 137, 226);
+    color: black;
+    background: linear-gradient(#575757, #7b7b7b);
     align-items: center;
+    border-bottom: 1px solid rgb(70, 70, 70);
+}
+
+.user-info-nav {
+    ul {
+        width: 100%;
+
+        li {
+            color: rgb(138, 138, 138);
+            margin-right: 300px;
+        }
+    }
+}
+
+.user-info {
+    margin-right: 50px;
+
+    span {
+        font-weight: 600;
+        color: #b8ecff;
+    }
 }
 
 ul {
     display: flex;
-    color: white;
+    color: rgb(199, 199, 199);
+    padding: 0 40px;
     width: 100%;
     font-size: 18px;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
     list-style: none;
+
+    div {
+        display: flex;
+    }
 }
 
 li {
@@ -30,7 +56,39 @@ li {
 
 footer {
     display: flex;
-    height: 25px;
-    background-color: rgb(73, 73, 73);
+    height: 35px;
+    background: linear-gradient(#5b5b5b, #1c1c1c);
     font-weight: 600;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: rgb(210, 210, 210);
+    font-size: 20px;
+    transition: .2s;
+    margin-right: 30px;
+    border-bottom: solid 2px rgba(0, 0, 0, 0);
+    padding-bottom: 4px;
+
+    &:hover {
+        color: rgb(255, 233, 70);
+        transition: .2s;
+        border-bottom: solid 2px rgb(255, 233, 70);
+    }
+
+    &:active {
+        color: rgb(58, 211, 96);
+        transition: .2s;
+    }
+}
+
+.nav-link-logout {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.377);
+    transition: .2s;
+
+    &:hover {
+        color: rgb(242, 80, 80);
+        transition: .2s;
+    }
 }

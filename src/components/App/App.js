@@ -6,7 +6,8 @@ import Route from 'react-router-dom/Route';
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import { fetchFilms, getCharacters } from '../../apis/apiCalls';
 import NavBar from '../NavBar/NavBar';
-import SelectedMovie from '../SelectedMovie/SelectedMovie'
+import SelectedMovie from '../SelectedMovie/SelectedMovie';
+import Favorites from '../Favorites/Favorites';
 
 
 class App extends Component {
@@ -44,10 +45,13 @@ class App extends Component {
           <Route exact path='/' render={
             () => { return (<LoginForm addUserInfo={this.addUserInfo} />) }
           } />
+          <Route exact path='/favorites' render={
+            () => { return (<Favorites characters={this.state.favorites} />) }
+          } />
           <Route exact path='/movies' render={
             () => { return (<MoviesContainer films={this.state.films} getDetails={this.getDetails}/>) }
           } />
-          <Route exact path='/movies/:episode' render={({match}) => {
+          <Route exact path='/movies/:episode' render={({ match }) => {
             const { episode } = match.params
             // const filteredMovie = this.state.films.find(film => film.episode_id === parseInt(episode))
             // console.log(filteredMovie)

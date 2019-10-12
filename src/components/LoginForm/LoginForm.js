@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './LoginForm.scss';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
-import Route from 'react-router-dom/Route';
 
 
 class LoginForm extends Component {
@@ -30,6 +29,7 @@ class LoginForm extends Component {
         return (
             <form>
                 <h1>SWAPI Trivia</h1>
+                <h4>Join the force</h4>
                 <label>Name</label>
                 <input
                     type='text'
@@ -54,13 +54,15 @@ class LoginForm extends Component {
                     onChange={(e) => this.handleChange(e)}
                 >
                     <option value=''>Select Skill Level</option>
-                    <option value='novice'>Novicee</option>
-                    <option value='intermediate'>Intermediate</option>
-                    <option value='expert'>Expert</option>
+                    <option value='Novice'>Novice</option>
+                    <option value='Intermediate'>Intermediate</option>
+                    <option value='Expert'>Expert</option>
                 </select>
-                <Link to="/movies" >
-                    <button type='button' onClick={this.handleClick}>Submit</button>
-                </Link>
+                <div>
+                    <Link to="/movies" >
+                        <button type='button' onClick={this.handleClick}>Submit</button>
+                    </Link>
+                </div>
             </form >
         )
     }
