@@ -6,8 +6,8 @@ import CharactersContainer from '../CharactersContainer/CharactersContainer';
 const SelectedMovie = ({ movie }) => {
     return (
         <main className='selected-movie'>
-            <QuoteContainer movie={movie} />
-            <CharactersContainer />
+            {/* <QuoteContainer movie={movie} /> */}
+            {/* <CharactersContainer /> */}
         </main>
     )
 }

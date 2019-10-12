@@ -23,12 +23,14 @@ class App extends Component {
       films: response
     }))
     getCharacters('https://swapi.co/api/films/1').then(response => console.log(response))
-    // getCharacter('https://swapi.co/api/people/1/')
-    // getFilms().then(response => console.log(response))
   }
 
   addUserInfo = (userData) => {
     this.setState({ userInfo: userData })
+  }
+
+  getDetails = (id) => {
+    // rout to /:episode
   }
 
   render() {
@@ -40,12 +42,12 @@ class App extends Component {
             () => { return (<LoginForm addUserInfo={this.addUserInfo} />) }
           } />
           <Route exact path='/movies' render={
-            () => { return (<MoviesContainer films={this.state.films} />) }
+            () => { return (<MoviesContainer films={this.state.films} getDetails={this.getDetails} />) }
           } />
           <Route exact path='/movies/:episode' render={({match}) => {
             const { episode } = match.params
-            const filteredMovie = this.state.films.find(film => film.episode_id === parseInt(episode))
-            console.log(filteredMovie)
+            // const filteredMovie = this.state.films.find(film => film.episode_id === parseInt(episode))
+            // console.log(filteredMovie)
            return <SelectedMovie movie={this.state.films.find(film => film.episode_id === parseInt(episode))}/>
           } } />
         </div>
