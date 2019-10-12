@@ -9,7 +9,6 @@ import NavBar from '../NavBar/NavBar';
 import SelectedMovie from '../SelectedMovie/SelectedMovie';
 import Favorites from '../Favorites/Favorites';
 
-
 class App extends Component {
   constructor() {
     super()
@@ -32,31 +31,32 @@ class App extends Component {
 
   getDetails = (id) => {
     return getCharacters(`https://swapi.co/api/films/${id}`)
-      .then(response => this.setState({currentCharacters: response}))
+      .then(response => this.setState({ currentCharacters: response }))
       .then(() => console.log('done!'))
       .catch(error => console.log('error', error))
   }
 
   render() {
+    const { currentCharacters, films, userInfo, favorites } = this.state;
+    const { name, quote, skillLevel } = userInfo;
     return (
       <Router>
         <div className="App">
-          <NavBar name={this.state.userInfo.name} quote={this.state.userInfo.quote} skill={this.state.userInfo.skillLevel} />
+          <NavBar name={name} quote={quote} skill={skillLevel} />
           <Route exact path='/' render={
             () => { return (<LoginForm addUserInfo={this.addUserInfo} />) }
           } />
           <Route exact path='/favorites' render={
-            () => { return (<Favorites characters={this.state.favorites} />) }
+            () => { return (<Favorites characters={favorites} />) }
           } />
           <Route exact path='/movies' render={
-            () => { return (<MoviesContainer films={this.state.films} getDetails={this.getDetails}/>) }
+            () => { return (<MoviesContainer films={films} getDetails={this.getDetails} />) }
           } />
           <Route exact path='/movies/:episode' render={({ match }) => {
             const { episode } = match.params
-            // const filteredMovie = this.state.films.find(film => film.episode_id === parseInt(episode))
-            // console.log(filteredMovie)
-           return <SelectedMovie characters={this.state.currentCharacters} movie={this.state.films.find(film => film.episode_id === parseInt(episode))}/>
-          } } />
+            const filteredMovie = films.find(film => film.episode_id === parseInt(episode))
+            return <SelectedMovie characters={currentCharacters} movie={filteredMovie} />
+          }} />
         </div>
       </Router>
     );
