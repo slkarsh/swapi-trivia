@@ -36,6 +36,10 @@ class App extends Component {
       .then(() => console.log('done!'))
       .catch(error => console.log('error', error))
   }
+  
+  addFavorite = (character) => {
+    this.setState({favorites: [...this.state.favorites, character]})
+  }
 
   render() {
     const { currentCharacters, films, userInfo, favorites } = this.state;
@@ -55,7 +59,7 @@ class App extends Component {
         <Route exact path='/movies/:episode' render={({ match }) => {
           const { episode } = match.params
           const filteredMovie = films.find(film => film.episode_id === parseInt(episode))
-          return <SelectedMovie characters={currentCharacters} movie={filteredMovie} />
+          return <SelectedMovie characters={currentCharacters} movie={filteredMovie} addFavorite={this.addFavorite} />
         }} />
       </div>
     );
