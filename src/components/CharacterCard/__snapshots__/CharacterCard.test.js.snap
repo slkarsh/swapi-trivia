@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacterCard component should match the snapshot 1`] = `
+<article
+  className="character-info"
+>
+  <h5
+    className="character-name"
+  >
+    Darth Vader
+  </h5>
+  <h5
+    className="character-species"
+  >
+    Species: 
+    Human
+  </h5>
+  <h5
+    className="character-homeworld"
+  >
+    Homeworld Name: 
+    Death Star
+    , population: 
+    3
+  </h5>
+  <p
+    className="character-rel-movies"
+  >
+    Related movies: 
+    movie1, movie2, movie3, movie4
+  </p>
+</article>
+`;

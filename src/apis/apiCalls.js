@@ -3,16 +3,17 @@ export const fetchFilms = () => {
     .then(response => response.json())
     .then(films => {
       const filmData = films.results.map((film, index) => {
-        const { title, episode_id, release_date} = film;
-        if (film.episode_id >=4 && film.episode_id <= 6) {
-          var filmId = film.episode_id - 3
-        } else if (film.episode_id >=1 && film.episode_id <= 3) {
-          var filmId = film.episode_id + 3
+        const { title, episode_id, release_date, opening_crawl } = film;
+        var filmId
+        if (film.episode_id >= 4 && film.episode_id <= 6) {
+          filmId = film.episode_id - 3
+        } else if (film.episode_id >= 1 && film.episode_id <= 3) {
+          filmId = film.episode_id + 3
         } else {
-          var filmId = film.episode_id
+          filmId = film.episode_id
         }
-        return { title, episode_id, release_date, filmId }
-      }).sort((a,b) => a.episode_id - b.episode_id)
+        return { title, episode_id, release_date, filmId, opening_crawl }
+      }).sort((a, b) => a.episode_id - b.episode_id)
       console.log('film data', filmData)
       return filmData;
     })
@@ -58,7 +59,7 @@ export const getCharacter = characterUrl => {
   return fetch(characterUrl)
     .then(response => response.json())
     .then(character => {
-      const {name} = character
+      const { name } = character
       const home = getHomeworld(character.homeworld)
       const speciesName = getSpeciesData(character.species).then(x => [...x])
       const relatedMovies = getRelatedFilms(character.films)
