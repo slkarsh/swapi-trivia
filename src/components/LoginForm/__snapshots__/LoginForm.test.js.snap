@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm component should match the snapshot 1`] = `
+<form>
+  <h1>
+    SWAPI Trivia
+  </h1>
+  <h4>
+    Join the force
+  </h4>
+  <label>
+    Name
+  </label>
+  <input
+    className="input-1"
+    name="name"
+    onChange={[Function]}
+    placeholder="Enter name here"
+    type="text"
+    value=""
+  />
+  <label>
+    Quote
+  </label>
+  <input
+    className="input-2"
+    name="quote"
+    onChange={[Function]}
+    placeholder="Enter your favorite Star Wars quote"
+    type="text"
+    value=""
+  />
+  <label>
+    Skill Level
+  </label>
+  <select
+    name="skillLevel"
+    onChange={[Function]}
+  >
+    <option
+      value=""
+    >
+      Select Skill Level
+    </option>
+    <option
+      value="Novice"
+    >
+      Novice
+    </option>
+    <option
+      value="Intermediate"
+    >
+      Intermediate
+    </option>
+    <option
+      value="Expert"
+    >
+      Expert
+    </option>
+  </select>
+  <div>
+    <Link
+      to="/movies"
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        Submit
+      </button>
+    </Link>
+  </div>
+</form>
+`;

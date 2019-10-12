@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 import LoginForm from '../LoginForm/LoginForm'
-import { BrowserRouter as Router, Link } from 'react-router-dom';
-import Route from 'react-router-dom/Route';
+import { Route } from 'react-router-dom'
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import { fetchFilms, getCharacters } from '../../apis/apiCalls';
 import NavBar from '../NavBar/NavBar';
@@ -40,25 +39,23 @@ class App extends Component {
     const { currentCharacters, films, userInfo, favorites } = this.state;
     const { name, quote, skillLevel } = userInfo;
     return (
-      <Router>
-        <div className="App">
-          <NavBar name={name} quote={quote} skill={skillLevel} />
-          <Route exact path='/' render={
-            () => { return (<LoginForm addUserInfo={this.addUserInfo} />) }
-          } />
-          <Route exact path='/favorites' render={
-            () => { return (<Favorites characters={favorites} />) }
-          } />
-          <Route exact path='/movies' render={
-            () => { return (<MoviesContainer films={films} getDetails={this.getDetails} />) }
-          } />
-          <Route exact path='/movies/:episode' render={({ match }) => {
-            const { episode } = match.params
-            const filteredMovie = films.find(film => film.episode_id === parseInt(episode))
-            return <SelectedMovie characters={currentCharacters} movie={filteredMovie} />
-          }} />
-        </div>
-      </Router>
+      <div className="App">
+        <NavBar name={name} quote={quote} skill={skillLevel} />
+        <Route exact path='/' render={
+          () => { return (<LoginForm addUserInfo={this.addUserInfo} />) }
+        } />
+        <Route exact path='/favorites' render={
+          () => { return (<Favorites characters={favorites} />) }
+        } />
+        <Route exact path='/movies' render={
+          () => { return (<MoviesContainer films={films} getDetails={this.getDetails} />) }
+        } />
+        <Route exact path='/movies/:episode' render={({ match }) => {
+          const { episode } = match.params
+          const filteredMovie = films.find(film => film.episode_id === parseInt(episode))
+          return <SelectedMovie characters={currentCharacters} movie={filteredMovie} />
+        }} />
+      </div>
     );
   }
 }

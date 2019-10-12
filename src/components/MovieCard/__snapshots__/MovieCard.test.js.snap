@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCard component should match the snapshot 1`] = `
+<section
+  className="movie-card"
+  id={3}
+  onClick={[Function]}
+>
+  <h3
+    onClick={[Function]}
+  >
+    The Phantom Menace
+  </h3>
+  <p
+    className="movie-card-text"
+  >
+    3
+  </p>
+  <p
+    className="movie-card-text"
+  >
+    2099
+  </p>
+  <Link
+    className="character-link"
+    to="/movies/3"
+  >
+    View Characters
+  </Link>
+</section>
+`;
