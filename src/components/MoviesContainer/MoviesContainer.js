@@ -1,6 +1,7 @@
 import React from 'react';
 import './MoviesContainer.scss';
 import MovieCard from '../MovieCard/MovieCard';
+import PropTypes from 'prop-types';
 
 const MoviesContainer = ({ films, getDetails }) => {
     return (
@@ -19,5 +20,12 @@ const MoviesContainer = ({ films, getDetails }) => {
         </main>
     )
 }
+
+MoviesContainer.propTypes = {
+    title: PropTypes.string,
+    episode_id: PropTypes.string,
+    release_date: PropTypes.number,
+    filmId: PropTypes.number
+};
 
 export default MoviesContainer;

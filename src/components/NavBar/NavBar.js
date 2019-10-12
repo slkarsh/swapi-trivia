@@ -1,6 +1,7 @@
 import React from 'react'
 import './NavBar.scss';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const NavBar = ({ name, quote, skill }) => {
     return (
@@ -39,5 +40,10 @@ const NavBar = ({ name, quote, skill }) => {
     )
 }
 
+NavBar.propTypes = {
+    name: PropTypes.string,
+    quote: PropTypes.string,
+    skill: PropTypes.string
+};
 
 export default NavBar

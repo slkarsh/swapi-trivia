@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './LoginForm.scss';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 
 class LoginForm extends Component {
     constructor() {
@@ -24,8 +24,8 @@ class LoginForm extends Component {
         this.props.addUserInfo(this.state)
     }
 
-
     render() {
+        const { name, quote } = this.state
         return (
             <form>
                 <h1>SWAPI Trivia</h1>
@@ -35,7 +35,7 @@ class LoginForm extends Component {
                     type='text'
                     name='name'
                     className='input-1'
-                    value={this.state.name}
+                    value={name}
                     placeholder='Enter name here'
                     onChange={(e) => this.handleChange(e)}
                 />
@@ -44,7 +44,7 @@ class LoginForm extends Component {
                     type='text'
                     name='quote'
                     className='input-2'
-                    value={this.state.quote}
+                    value={quote}
                     placeholder='Enter your favorite Star Wars quote'
                     onChange={(e) => this.handleChange(e)}
                 />
@@ -67,5 +67,11 @@ class LoginForm extends Component {
         )
     }
 }
+
+LoginForm.propTypes = {
+    name: PropTypes.string,
+    quote: PropTypes.string,
+    skillLevel: PropTypes.string
+};
 
 export default LoginForm

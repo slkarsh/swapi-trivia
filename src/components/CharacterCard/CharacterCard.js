@@ -1,5 +1,6 @@
 import React from 'react';
 import './CharacterCard.scss';
+import PropTypes from 'prop-types';
 
 const CharacterCard = ({ name, species, homeworldName, homeworldPop, relatedFilms }) => {
     return (
@@ -11,5 +12,13 @@ const CharacterCard = ({ name, species, homeworldName, homeworldPop, relatedFilm
         </article>
     )
 }
+
+CharacterCard.propTypes = {
+    name: PropTypes.string,
+    species: PropTypes.array,
+    homeworldName: PropTypes.string,
+    homeworldPop: PropTypes.string,
+    relatedFilms: PropTypes.array,
+};
 
 export default CharacterCard;
