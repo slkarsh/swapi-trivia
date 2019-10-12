@@ -30,9 +30,9 @@ class App extends Component {
   }
 
   getDetails = (id) => {
-    console.log(id)
-    getCharacters('https://swapi.co/api/films/1')
+    return getCharacters(`https://swapi.co/api/films/${id}`)
       .then(response => this.setState({currentCharacters: response}))
+      .catch(error => console.log('error', error))
   }
 
   render() {
