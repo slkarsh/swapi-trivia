@@ -12,11 +12,7 @@ exports[`SelectedMovie component should match the snapshot 1`] = `
     }
   />
   <CharactersContainer
-    characters={
-      Object {
-        "object": "characterInfo",
-      }
-    }
+    characters={Array []}
   />
 </main>
 `;

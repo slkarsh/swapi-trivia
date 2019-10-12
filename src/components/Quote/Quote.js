@@ -1,5 +1,6 @@
 import React from 'react';
 import './Quote.scss';
+import PropTypes from 'prop-types';
 
 const Quote = ({ episode, title, description }) => {
     return (
@@ -13,5 +14,11 @@ const Quote = ({ episode, title, description }) => {
         </div>
     )
 }
+
+Quote.propTypes = {
+    episode: PropTypes.number,
+    title: PropTypes.string,
+    description: PropTypes.string
+};
 
 export default Quote

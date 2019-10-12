@@ -1,6 +1,7 @@
 import React from 'react';
 import './CharactersContainer.scss';
 import CharacterCard from '../CharacterCard/CharacterCard'
+import PropTypes from 'prop-types';
 
 const CharactersContainer = ({ characters }) => {
     return (
@@ -19,5 +20,14 @@ const CharactersContainer = ({ characters }) => {
         </section>
     )
 }
+
+CharactersContainer.propTypes = {
+    character: PropTypes.object,
+    index: PropTypes.number,
+    name: PropTypes.string,
+    species: PropTypes.string,
+    homeworld: PropTypes.object,
+    relatedFilms: PropTypes.array,
+};
 
 export default CharactersContainer

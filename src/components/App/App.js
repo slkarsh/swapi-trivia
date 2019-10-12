@@ -7,6 +7,7 @@ import { fetchFilms, getCharacters } from '../../apis/apiCalls';
 import NavBar from '../NavBar/NavBar';
 import SelectedMovie from '../SelectedMovie/SelectedMovie';
 import Favorites from '../Favorites/Favorites';
+import PropTypes from 'prop-types';
 
 class App extends Component {
   constructor() {
@@ -14,7 +15,8 @@ class App extends Component {
     this.state = {
       films: [],
       userInfo: [],
-      currentCharacters: []
+      currentCharacters: [],
+      favorites: []
     }
   }
 
@@ -59,5 +61,17 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  addUserInfo: PropTypes.func,
+  getDetails: PropTypes.func,
+  name: PropTypes.string,
+  quote: PropTypes.string,
+  skillLevel: PropTypes.string,
+  films: PropTypes.array,
+  currentCharacters: PropTypes.array,
+  userInfo: PropTypes.string,
+  favorites: PropTypes.array,
+};
 
 export default App;

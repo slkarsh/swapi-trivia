@@ -6,7 +6,7 @@ describe('SelectedMovie', () => {
   it('component should match the snapshot', () => {
     const wrapper = shallow(
       <SelectedMovie
-        characters={{ object: 'characterInfo' }}
+        characters={[]}
         movie={{ object: 'movieInfo' }}
       />
     )

@@ -8,7 +8,7 @@ describe('CharacterCard', () => {
       <CharacterCard
         key={3}
         name={'Darth Vader'}
-        species={'Human'}
+        species={['Human']}
         homeworldName={'Death Star'}
         homeworldPop={'3'}
         relatedFilms={['movie1, movie2, movie3, movie4']}
