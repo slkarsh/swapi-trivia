@@ -1,64 +1,67 @@
 @keyframes swcrawl {
-    0% {
-            transform: rotatex(35deg) translateY(470px);
-            opacity: 1;
-    }
-        25% {
-            opacity:1;
-        }
-            90% {
-                opacity:1;
-            }
-    100% {
-            opacity: 0;
-            transform: rotatex(45deg) translateY(-250px);}
+  0% {
+    transform: rotatex(35deg) translateY(470px);
+    opacity: 1;
+  }
+  25% {
+    opacity:1;
+  }
+  90% {
+    opacity:1;
+  }
+  100% {
+    opacity: 0;
+		transform: rotatex(45deg) translateY(-250px);
+	}
 }
 
 body {                                        
-    background: url('http://www.ultradrive.com/images/rdx_starfield.jpg');
-    color: #E6CA3A;
+  background: url('http://www.ultradrive.com/images/rdx_starfield.jpg');
+  color: #E6CA3A;
 }
 
 .galaxy {
-    display: flex;
-    flex-direction: column;
-    top: 0;
+  display: flex;
+  flex-direction: column;
+  top: 0;
     
-    div img {
-        width: 80%;
-        opacity: 0;
-        animation-name: logo;
-        animation-duration: 100s;
-    }
+  div img {
+    width: 80%;
+    opacity: 0;
+    animation-name: logo;
+    animation-duration: 100s;
+  }
     
-    .fall {
-        width: 680px;
-        font-family: 'Franklin Gothic Book',sans-serif;
-        font-size: 32px;
-        line-height: 50px;
-        text-indent: 50px;
-        margin: auto;
-        text-align: justify;
-        perspective: 1150px;
-        font-weight: bold;
+  .fall {
+    width: 600px;
+    font-family: 'Franklin Gothic Book',sans-serif;
+    font-size: 30px;
+    line-height: 50px;
+    text-indent: 50px;
+		margin: auto;
+		margin-right: 80px;
+    text-align: justify;
+    perspective: 1150px;
+    font-weight: bold;
         
-        p {
-            margin: auto;
-            width: 100%;
-            height: 100%;
-            text-align: justify;
-            animation-name: swcrawl;
-            animation-delay: 0s;
-            animation-duration: 20s;
-            opacity: 1;
+    p {
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      text-align: justify;
+      animation-name: swcrawl;
+      animation-delay: 0s;
+      animation-duration: 20s;
+      opacity: 1;
             
-            i {
-                text-align: left;
-                display: block;
-                width: 100%;
-                font-size: 42px;
-                margin-bottom: 30px;
-            }
-        }
+      i {
+				text-align: center;
+				color: rgb(255, 255, 255);
+        display: block;
+				width: 100%;
+        font-size: 42px;
+        margin-bottom: 30px;
+      }
     }
+  }
 } 
