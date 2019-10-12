@@ -6,7 +6,7 @@ const MoviesContainer = ({ films, getDetails }) => {
     return (
         <main>
             {films.map(film => {
-                const { title, episode_id, release_date, filmId } = film
+                const { title, episode_id, release_date, filmId, characters } = film
                 return < MovieCard
                     key={episode_id}
                     title={title}

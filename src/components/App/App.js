@@ -14,7 +14,8 @@ class App extends Component {
     super()
     this.state = {
       films: [],
-      userInfo: []
+      userInfo: [],
+      currentCharacters: []
     }
   }
 
@@ -22,7 +23,6 @@ class App extends Component {
     fetchFilms().then(response => this.setState({
       films: response
     }))
-    getCharacters('https://swapi.co/api/films/1').then(response => console.log(response))
   }
 
   addUserInfo = (userData) => {
@@ -30,7 +30,9 @@ class App extends Component {
   }
 
   getDetails = (id) => {
-    // rout to /:episode
+    console.log(id)
+    getCharacters('https://swapi.co/api/films/1')
+      .then(response => this.setState({currentCharacters: response}))
   }
 
   render() {
@@ -42,13 +44,13 @@ class App extends Component {
             () => { return (<LoginForm addUserInfo={this.addUserInfo} />) }
           } />
           <Route exact path='/movies' render={
-            () => { return (<MoviesContainer films={this.state.films} getDetails={this.getDetails} />) }
+            () => { return (<MoviesContainer films={this.state.films} getDetails={this.getDetails}/>) }
           } />
           <Route exact path='/movies/:episode' render={({match}) => {
             const { episode } = match.params
             // const filteredMovie = this.state.films.find(film => film.episode_id === parseInt(episode))
             // console.log(filteredMovie)
-           return <SelectedMovie movie={this.state.films.find(film => film.episode_id === parseInt(episode))}/>
+           return <SelectedMovie characters={this.state.currentCharacters} movie={this.state.films.find(film => film.episode_id === parseInt(episode))}/>
           } } />
         </div>
       </Router>
