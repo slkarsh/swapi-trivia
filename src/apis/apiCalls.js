@@ -2,14 +2,22 @@ export const fetchFilms = () => {
   return fetch('https://swapi.co/api/films/')
     .then(response => response.json())
     .then(films => {
-      const filmData = films.results.sort((a, b) => a.episode_id - b.episode_id)
-        .map(film => {
-          const { title, episode_id, release_date } = film;
-          return { title, episode_id, release_date };
-        })
+      const filmData = films.results.map((film, index) => {
+        const { title, episode_id, release_date} = film;
+        if (film.episode_id >=4 && film.episode_id <= 6) {
+          var filmId = film.episode_id - 3
+        } else if (film.episode_id >=1 && film.episode_id <= 3) {
+          var filmId = film.episode_id + 3
+        } else {
+          var filmId = film.episode_id
+        }
+        return { title, episode_id, release_date, filmId }
+      }).sort((a,b) => a.episode_id - b.episode_id)
+      console.log('film data', filmData)
       return filmData;
     })
-};
+}
+
 
 //characters to be array of URL
 // export const getCharacters = film => {
@@ -33,7 +41,6 @@ export const fetchFilms = () => {
 export const getCharacters = filmUrl => {
   return fetch(filmUrl)
     .then(response => response.json())
-    // .then(film => console.log('characters', film))
     .then(film => {
       const characterInfo = film.characters.map(character => {
         return getCharacter(character).then(character => ({

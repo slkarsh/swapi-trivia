@@ -3,18 +3,19 @@ import './CharactersContainer.scss';
 import CharacterCard from '../CharacterCard/CharacterCard'
 
 const CharactersContainer = ({ characters }) => {
-
-    const displayCharacters = () => {
-        characters.map(character => {
-            return <CharacterCard info={character} />
-        })
-    }
-
     return (
-        <section>
-            <h1>Characters</h1>
-            <h3>characters cards render here</h3>
-            {displayCharacters}
+        <section className='characters-cont'>
+            {characters.map((character, index) => {
+                const { name, species, homeworld, relatedFilms } = character;
+                return <CharacterCard
+                    key={index}
+                    name={name}
+                    species={species}
+                    homeworldName={homeworld.name}
+                    homeworldPop={homeworld.population}
+                    relatedFilms={relatedFilms}
+                />
+            })}
         </section>
     )
 }
