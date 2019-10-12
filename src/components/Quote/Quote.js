@@ -2,13 +2,13 @@ import React from 'react';
 import './Quote.scss';
 import PropTypes from 'prop-types';
 
-const Quote = ({ episode, title, description }) => {
+const Quote = ({ episode, title, opening }) => {
   return (
     <div className="galaxy">
       <div className="fall">
         <p>
           <i>{episode}. {title.toUpperCase()}</i>
-          {description}
+          {opening}
         </p>
       </div>
     </div>

@@ -33,12 +33,13 @@ body {
   }
     
   .fall {
-    width: 680px;
+    width: 600px;
     font-family: 'Franklin Gothic Book',sans-serif;
-    font-size: 32px;
+    font-size: 30px;
     line-height: 50px;
     text-indent: 50px;
-    margin: auto;
+		margin: auto;
+		margin-right: 80px;
     text-align: justify;
     perspective: 1150px;
     font-weight: bold;
@@ -54,9 +55,10 @@ body {
       opacity: 1;
             
       i {
-        text-align: left;
+				text-align: center;
+				color: rgb(255, 255, 255);
         display: block;
-        width: 100%;
+				width: 100%;
         font-size: 42px;
         margin-bottom: 30px;
       }

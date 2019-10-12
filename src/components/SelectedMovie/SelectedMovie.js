@@ -7,7 +7,12 @@ const SelectedMovie = ({ movie, characters }) => {
   return (
     <main className='selected-movie'>
       <QuoteContainer movie={movie} />
-      <CharactersContainer characters={characters} />
+      {!characters.length
+        ? <img
+          className='loading-image'
+          src="https://cdn.dribbble.com/users/361263/screenshots/3051905/imperial_emblem.gif"
+          alt="" />
+        : <CharactersContainer characters={characters} />}
     </main>
   )
 }
