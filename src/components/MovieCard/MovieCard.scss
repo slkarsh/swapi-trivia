@@ -1,21 +1,24 @@
 .movie-card {
-    background: linear-gradient(to top left, rgb(75, 75, 75), #2d2d2d);
     border-radius: 2px 2px 6px 6px;
+    background: linear-gradient(to top left, rgba(114, 114, 114, 0.158), #2d2d2d00);
     display: flex;
-    border: solid rgb(157, 157, 157) 2px;
+    border: solid rgb(143, 143, 143) 1px;
+    box-shadow: 0 0 3px rgb(130, 130, 130);
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    transition: .2s;
 }
 
 .poster-image {
     width: 100%;
+    border-bottom: 1px solid rgb(72, 72, 72);
 }
 
 h3 {
     font-size: 28px;
     margin: 20px 30px 10px 30px;
-    border-bottom: 3px solid rgba(155, 155, 155, 0.233);
+    border-bottom: 1px solid rgba(155, 155, 155, 0.233);
     width: 85%;
     padding-bottom: 5px;
     text-align: left;
@@ -23,11 +26,13 @@ h3 {
 
 .movie-card-text {
     margin: 5px 30px;
-    color: white;
+    color: rgb(205, 205, 205);
+    font-weight: 700;
+    font-size: 16px;
 }
 
 .character-link {
-    border-top: 2px solid rgb(255, 225, 0);
+    border-top: 1px solid rgb(218, 218, 218);
     width: 85%;
     height: 50px;
     margin: 5px 30px;
@@ -38,12 +43,63 @@ h3 {
     transition: .2s;
 
     &:hover {
-        border-top: 2px solid red;
+        border-top: 1px solid #ff0000;
         transition: .2s;
+        color: rgb(255, 96, 96);
     }
 
     &:active {
         transition: .2s;
-        color: red;
+        color: rgb(185, 78, 78);
+        border-top: 1px solid #a54343;
     }
+}
+
+.movie-card-1,
+.movie-card-2,
+.movie-card-3 {
+  h3 {
+    color: rgb(255, 126, 126);
+  }
+
+  &:hover {
+    box-shadow: 0 0 15px rgb(255, 95, 95);
+    transition: .2s;
+  }
+  &:active {
+    box-shadow: 0 0 30px rgb(255, 108, 108);
+    transition: .2s;
+  }
+}
+
+.movie-card-4,
+.movie-card-5,
+.movie-card-6 {
+  h3 {
+    color: rgb(126, 225, 255);
+  }
+
+  &:hover {
+    box-shadow: 0 0 15px rgb(95, 204, 255);
+    transition: .2s;
+  }
+  &:active {
+    box-shadow: 0 0 30px rgb(125, 196, 255);
+    transition: .2s;
+  }
+}
+
+.movie-card-7 {
+  h3 {
+    color: rgb(255, 165, 126);
+  }
+  
+  &:hover {
+    box-shadow: 0 0 15px rgb(255, 177, 141);
+    transition: .2s;
+  }
+  &:active {
+    box-shadow: 0 0 30px rgb(255, 201, 144);
+    transition: .2s;
+  }
 }
