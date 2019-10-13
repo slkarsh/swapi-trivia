@@ -11,8 +11,10 @@ exports[`SelectedMovie component should match the snapshot 1`] = `
       }
     }
   />
-  <CharactersContainer
-    characters={Array []}
+  <img
+    alt=""
+    className="loading-image"
+    src="https://cdn.dribbble.com/users/361263/screenshots/3051905/imperial_emblem.gif"
   />
 </main>
 `;

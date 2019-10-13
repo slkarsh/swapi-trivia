@@ -13,7 +13,6 @@ exports[`Quote component should match the snapshot 1`] = `
         . 
         PHANTOM MENACE
       </i>
-      Long description goes here..
     </p>
   </div>
 </div>
