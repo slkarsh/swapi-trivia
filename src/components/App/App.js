@@ -60,7 +60,7 @@ handleMovieChange = () => {
     const { name, quote, skillLevel } = userInfo;
     return (
       <div className="App">
-        <NavBar name={name} quote={quote} skill={skillLevel} handleMovieChange={this.handleMovieChange} />
+        <NavBar name={name} quote={quote} skill={skillLevel} handleMovieChange={this.handleMovieChange} favorites={favorites} />
         <Route exact path='/' render={
           () => { return (<LoginForm addUserInfo={this.addUserInfo} />) }
         } />
