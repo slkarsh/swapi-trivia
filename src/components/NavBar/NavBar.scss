@@ -109,3 +109,9 @@ footer {
         transition: .2s;
     }
 }
+
+.active {
+    color: rgb(255, 233, 70);
+    transition: .2s;
+    border-bottom: solid 2px rgb(255, 233, 70);
+}

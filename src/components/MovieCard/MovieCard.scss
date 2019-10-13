@@ -8,6 +8,7 @@
     align-items: flex-start;
     justify-content: space-between;
     transition: .2s;
+    margin: 10px 50px;
 }
 
 .poster-image {
@@ -92,15 +93,32 @@ h3 {
 
 .movie-card-7 {
   h3 {
-    color: rgb(255, 165, 126);
+    color: rgb(126, 255, 132);
   }
   
   &:hover {
-    box-shadow: 0 0 15px rgb(255, 177, 141);
+    box-shadow: 0 0 15px rgb(147, 255, 141);
     transition: .2s;
   }
   &:active {
-    box-shadow: 0 0 30px rgb(255, 201, 144);
+    box-shadow: 0 0 30px rgb(144, 255, 163);
     transition: .2s;
+  }
+}
+
+.text-link {
+  text-decoration: none;
+  margin: 5px 30px;
+  font-weight: 500;
+  color: rgb(255, 255, 128);
+  border: rgb(63, 63, 63) solid 1px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgb(31, 31, 31);
+  transition: .15s;
+  
+  &:hover {
+    background-color: rgb(50, 50, 50);
+    transition: .15s;
   }
 }
