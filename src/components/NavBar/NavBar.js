@@ -3,7 +3,7 @@ import './NavBar.scss';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const NavBar = ({ name, quote, skill }) => {
+const NavBar = ({ name, quote, skill, handleMovieChange }) => {
   return (
     <nav>
       <header>
@@ -19,7 +19,7 @@ const NavBar = ({ name, quote, skill }) => {
         <ul>
           <div>
             <li>
-              <Link to='/movies' className='nav-link'>
+              <Link to='/movies' className='nav-link' onClick={(e) => handleMovieChange()}>
                 Movies
                         </Link>
             </li>

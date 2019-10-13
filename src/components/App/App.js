@@ -37,16 +37,6 @@ class App extends Component {
       .catch(error => console.log('error', error))
   }
   
-  // addFavorite = (character) => {
-  //   this.setState({favorites: [...this.state.favorites, character]})
-  // }
-
-  // addFavorite = (character) => {
-  //   if (this.state.favorites.length === 0 ) {
-  //     this.setState({favorites: [...this.state.favorites, character]})
-  //   }
-  // }
-
   checkFavorites = characterObj => {
     let faveNames = this.state.favorites.map(favorite => favorite.name)
     return faveNames.includes(characterObj.name)
@@ -59,12 +49,18 @@ addFavorite = characterObj => {
   }
 }
 
+handleMovieChange = () => {
+  if (this.state.currentCharacters.length !== 0 ) {
+    this.setState({currentCharacters: []})
+  }
+}
+
   render() {
     const { currentCharacters, films, userInfo, favorites } = this.state;
     const { name, quote, skillLevel } = userInfo;
     return (
       <div className="App">
-        <NavBar name={name} quote={quote} skill={skillLevel} />
+        <NavBar name={name} quote={quote} skill={skillLevel} handleMovieChange={this.handleMovieChange} />
         <Route exact path='/' render={
           () => { return (<LoginForm addUserInfo={this.addUserInfo} />) }
         } />
