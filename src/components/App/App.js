@@ -55,6 +55,11 @@ handleMovieChange = () => {
   }
 }
 
+removeFavorite = characterObj => {
+  const editedFaves = this.state.favorites.filter(favorite => favorite.name !== characterObj.name)
+  this.setState({ favorites: editedFaves})
+}
+
   render() {
     const { currentCharacters, films, userInfo, favorites } = this.state;
     const { name, quote, skillLevel } = userInfo;
@@ -73,7 +78,7 @@ handleMovieChange = () => {
         <Route exact path='/movies/:episode' render={({ match }) => {
           const { episode } = match.params
           const filteredMovie = films.find(film => film.episode_id === parseInt(episode))
-          return <SelectedMovie characters={currentCharacters} movie={filteredMovie} addFavorite={this.addFavorite} />
+          return <SelectedMovie characters={currentCharacters} movie={filteredMovie} addFavorite={this.addFavorite} removeFavorite={this.removeFavorite} />
         }} />
       </div>
     );
