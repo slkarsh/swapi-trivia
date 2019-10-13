@@ -37,9 +37,27 @@ class App extends Component {
       .catch(error => console.log('error', error))
   }
   
-  addFavorite = (character) => {
-    this.setState({favorites: [...this.state.favorites, character]})
+  // addFavorite = (character) => {
+  //   this.setState({favorites: [...this.state.favorites, character]})
+  // }
+
+  // addFavorite = (character) => {
+  //   if (this.state.favorites.length === 0 ) {
+  //     this.setState({favorites: [...this.state.favorites, character]})
+  //   }
+  // }
+
+  checkFavorites = characterObj => {
+    let faveNames = this.state.favorites.map(favorite => favorite.name)
+    return faveNames.includes(characterObj.name)
   }
+
+
+addFavorite = characterObj => {
+  if (!this.checkFavorites(characterObj)) {
+    return this.setState({favorites: [...this.state.favorites, characterObj]})
+  }
+}
 
   render() {
     const { currentCharacters, films, userInfo, favorites } = this.state;
