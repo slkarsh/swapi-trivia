@@ -26,18 +26,21 @@ header {
 }
 
 .user-info {
-    margin-right: 50px;
+    margin-right: 40px;
+    font-size: 15px;
+    font-weight: 400;
 
     span {
         font-weight: 600;
         color: #b8ecff;
+        font-size: 18px;
     }
 }
 
 ul {
     display: flex;
     color: rgb(199, 199, 199);
-    padding: 0 40px;
+    padding: 0 80px;
     width: 100%;
     font-size: 18px;
     justify-content: space-between;
@@ -66,6 +69,7 @@ footer {
     color: rgb(210, 210, 210);
     font-size: 20px;
     transition: .2s;
+    font-weight: 400;
     margin-right: 30px;
     border-bottom: solid 2px rgba(0, 0, 0, 0);
     padding-bottom: 4px;
@@ -86,6 +90,7 @@ footer {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.377);
     transition: .2s;
+    font-weight: 400;
 
     &:hover {
         color: rgb(242, 80, 80);
