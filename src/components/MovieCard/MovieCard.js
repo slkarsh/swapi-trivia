@@ -22,7 +22,11 @@ const images = {
 
 const MovieCard = ({ title, episode, releaseYear, filmId, getDetails }) => {
   return (
-    <section className='movie-card' id={filmId} onClick={(e) => getDetails(filmId)}>
+    <section
+      className={`movie-card movie-card-${episode}`}
+      classNameid={filmId}
+      onClick={(e) => getDetails(filmId)}
+    >
       <img
         src={images[episode]}
         className='poster-image'
