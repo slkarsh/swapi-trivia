@@ -2,10 +2,15 @@
 
 exports[`MovieCard component should match the snapshot 1`] = `
 <section
-  className="movie-card"
-  id={3}
+  className="movie-card movie-card-3"
+  classNameid={3}
   onClick={[Function]}
 >
+  <img
+    alt="Episode 3 movie poster"
+    className="poster-image"
+    src="3.jpg"
+  />
   <h3
     onClick={[Function]}
   >
@@ -14,6 +19,7 @@ exports[`MovieCard component should match the snapshot 1`] = `
   <p
     className="movie-card-text"
   >
+    Episode 
     3
   </p>
   <p

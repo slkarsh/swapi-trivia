@@ -11,7 +11,7 @@ describe('CharacterCard', () => {
         species={['Human']}
         homeworldName={'Death Star'}
         homeworldPop={'3'}
-        relatedFilms={['movie1, movie2, movie3, movie4']}
+        relatedFilms={[]}
       />
     )
     expect(wrapper).toMatchSnapshot();

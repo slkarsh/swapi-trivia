@@ -9,25 +9,40 @@ exports[`CharacterCard component should match the snapshot 1`] = `
   >
     Darth Vader
   </h5>
+  <hr />
   <h5
     className="character-species"
   >
-    Species: 
-    Human
+    species: 
+    <span>
+      Human
+    </span>
   </h5>
   <h5
     className="character-homeworld"
   >
-    Homeworld Name: 
-    Death Star
-    , population: 
-    3
+    homeworld: 
+    <span>
+      Death Star
+    </span>
+    <br />
+    population: 
+    <span>
+      3
+    </span>
+     
   </h5>
-  <p
+  <h5
     className="character-rel-movies"
   >
-    Related movies: 
-    movie1, movie2, movie3, movie4
-  </p>
+    appears in: 
+  </h5>
+  <div
+    className="character-footer"
+  >
+    Add 
+    Darth Vader
+     to favorites
+  </div>
 </article>
 `;
