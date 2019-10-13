@@ -4,7 +4,10 @@ exports[`App component should match the snapshot 1`] = `
 <div
   className="App"
 >
-  <NavBar />
+  <NavBar
+    favorites={Array []}
+    handleMovieChange={[Function]}
+  />
   <Route
     exact={true}
     path="/"

@@ -39,10 +39,19 @@ exports[`CharacterCard component should match the snapshot 1`] = `
   </h5>
   <div
     className="character-footer"
+    onClick={[Function]}
   >
     Add 
     Darth Vader
      to favorites
+  </div>
+  <div
+    className="footer-remove"
+    onClick={[Function]}
+  >
+    Remove 
+    Darth Vader
+     from favorites
   </div>
 </article>
 `;

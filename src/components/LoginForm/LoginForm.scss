@@ -19,9 +19,19 @@ form {
   justify-content: space-around;
   align-items: flex-start;
   background-color: #383838;
-  background: linear-gradient(#5e5e5e, #383838);
+  background: linear-gradient(#55729ee3, #38383874);
   padding: 40px;
+  border: 1px solid rgb(0, 136, 255);
+  border-bottom: 1px solid rgb(102, 36, 255);
+  border-top: 1px solid #5bc6c9e3;
   border-radius: 5px;
+  box-shadow: 0 0 100px rgba(126, 188, 255, 0.536);
+  transition: .4s;
+
+  &:hover {
+    box-shadow: 0 0 100px rgba(126, 171, 255, 0.749);
+    transition: .4s;
+  }
 
   label {
     font-size: 16px;
@@ -59,7 +69,7 @@ form {
 
   .input-2 {
     &:focus {
-      box-shadow: 0 0 40px 0 rgb(43, 198, 255);
+      box-shadow: 0 0 40px 0 rgb(61, 255, 43);
       background-color: rgb(224, 244, 255);
      }
   }

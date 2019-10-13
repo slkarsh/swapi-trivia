@@ -1,6 +1,6 @@
 import React from 'react'
 import './NavBar.scss';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const NavBar = ({ name, quote, skill, handleMovieChange, favorites }) => {
@@ -19,14 +19,14 @@ const NavBar = ({ name, quote, skill, handleMovieChange, favorites }) => {
         <ul>
           <div>
             <li>
-              <Link to='/movies' className='nav-link' onClick={(e) => handleMovieChange()}>
+              <NavLink to='/movies' className='nav-link' onClick={(e) => handleMovieChange()}>
                 Movies
-                        </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to='/favorites' className='nav-link'>
+              <NavLink to='/favorites' className='nav-link'>
                 Favorites: {favorites.length}
-                        </Link>
+              </NavLink>
             </li>
           </div>
           <li>
