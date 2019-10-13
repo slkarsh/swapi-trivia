@@ -8,12 +8,17 @@ describe('App', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  // it('should update state currentTopic when selectTopic is invoked', () => {
-  //   const wrapper = shallow(<App />);
-  //   const mockSelectTopic = 'local'
-  //   const expected = 'local';
+  it('should update userInfo state when addUserInfo gets invoked', () => {
+    // Setup
+    const wrapper = shallow(<App />);
+    const expected = [{ name: 'Darth Vader', quote: 'I am your father.', skillLevel: 'Expert' }];
 
-  //   wrapper.instance().selectNews(mockSelectTopic)
-  //   expect(wrapper.state('currentTopic')).toEqual(expected);
-  // })
+    expect(wrapper.state('userInfo')).toEqual([]);
+
+    // Execution
+    wrapper.instance().addUserInfo(expected)
+
+    // Expectation
+    expect(wrapper.state('userInfo')).toEqual(expected);
+  });
 })
