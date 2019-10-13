@@ -22,14 +22,14 @@ form {
   background: linear-gradient(#55729ee3, #38383874);
   padding: 40px;
   border: 1px solid rgb(0, 136, 255);
-  border-bottom: 1px solid rgb(102, 36, 255);
+  border-bottom: 1px solid rgb(72, 36, 255);
   border-top: 1px solid #5bc6c9e3;
   border-radius: 5px;
-  box-shadow: 0 0 100px rgba(126, 188, 255, 0.536);
+  box-shadow: 0 0 100px rgba(126, 188, 255, 0.365);
   transition: .4s;
 
   &:hover {
-    box-shadow: 0 0 100px rgba(126, 171, 255, 0.749);
+    box-shadow: 0 0 100px rgba(126, 171, 255, 0.509);
     transition: .4s;
   }
 
@@ -64,14 +64,28 @@ form {
     &:focus {
       box-shadow: 0 0 40px 0 #FF0000;
       background-color: rgb(255, 224, 224);
+      transition: .25s;
      }
+
+    &:active {
+      box-shadow: 0 0 10px 0 #FF0000;
+      background-color: rgb(255, 255, 255);
+      transition: .25s;
+    }
   }
 
   .input-2 {
     &:focus {
       box-shadow: 0 0 40px 0 rgb(61, 255, 43);
       background-color: rgb(224, 244, 255);
+      transition: .25s;
      }
+
+     &:active {
+      box-shadow: 0 0 10px 0 rgb(61, 255, 43);
+      background-color: rgb(255, 255, 255);
+      transition: .25s;
+    }
   }
   
   ::placeholder {
@@ -100,6 +114,7 @@ form {
     font-size: 18px;
     font-weight: 600;
     transition: .25s;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.557);
 
     &:hover {
       background-color: rgb(255, 242, 168);
