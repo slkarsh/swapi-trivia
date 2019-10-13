@@ -36,18 +36,41 @@ class App extends Component {
       .then(() => console.log('done!'))
       .catch(error => console.log('error', error))
   }
+  
+  checkFavorites = characterObj => {
+    let faveNames = this.state.favorites.map(favorite => favorite.name)
+    return faveNames.includes(characterObj.name)
+  }
+
+
+addFavorite = characterObj => {
+  if (!this.checkFavorites(characterObj)) {
+    return this.setState({favorites: [...this.state.favorites, characterObj]})
+  }
+}
+
+handleMovieChange = () => {
+  if (this.state.currentCharacters.length !== 0 ) {
+    this.setState({currentCharacters: []})
+  }
+}
+
+removeFavorite = characterObj => {
+  const editedFaves = this.state.favorites.filter(favorite => favorite.name !== characterObj.name)
+  this.setState({ favorites: editedFaves})
+}
 
   render() {
     const { currentCharacters, films, userInfo, favorites } = this.state;
     const { name, quote, skillLevel } = userInfo;
     return (
       <div className="App">
-        <NavBar name={name} quote={quote} skill={skillLevel} />
+        <NavBar name={name} quote={quote} skill={skillLevel} handleMovieChange={this.handleMovieChange} favorites={favorites} />
         <Route exact path='/' render={
           () => { return (<LoginForm addUserInfo={this.addUserInfo} />) }
         } />
         <Route exact path='/favorites' render={
-          () => { return (<Favorites characters={favorites} />) }
+          () => { return (<Favorites favorites={favorites} />) }
         } />
         <Route exact path='/movies' render={
           () => { return (<MoviesContainer films={films} getDetails={this.getDetails} />) }
@@ -55,7 +78,7 @@ class App extends Component {
         <Route exact path='/movies/:episode' render={({ match }) => {
           const { episode } = match.params
           const filteredMovie = films.find(film => film.episode_id === parseInt(episode))
-          return <SelectedMovie characters={currentCharacters} movie={filteredMovie} />
+          return <SelectedMovie characters={currentCharacters} movie={filteredMovie} addFavorite={this.addFavorite} removeFavorite={this.removeFavorite} />
         }} />
       </div>
     );

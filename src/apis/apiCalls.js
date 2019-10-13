@@ -19,31 +19,13 @@ export const fetchFilms = () => {
     })
 }
 
-
-//characters to be array of URL
-// export const getCharacters = film => {
-//   return fetch(film)
-//     .then(response => response.json())
-//     .then(film => {film.characters)
-//     .then(characters => {
-//       const characterInfo = characters.map(character => {
-//        return getCharacter(character).then(character => ({
-//           name: character[0],
-//           homeworld: character[1],
-//           species: character[2],
-//           relatedFilms: character[3]
-//     })
-//   )
-//   })
-//   return Promise.all(characterInfo);
-// }
-// )}
-
 export const getCharacters = filmUrl => {
   return fetch(filmUrl)
     .then(response => response.json())
+    .then(response => response.characters)
+    .then(response => response.splice(0,10))
     .then(film => {
-      const characterInfo = film.characters.map(character => {
+      const characterInfo = film.map(character => {
         return getCharacter(character).then(character => ({
           name: character[0],
           homeworld: character[1],

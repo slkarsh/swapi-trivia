@@ -3,7 +3,7 @@ import './CharactersContainer.scss';
 import CharacterCard from '../CharacterCard/CharacterCard'
 import PropTypes from 'prop-types';
 
-const CharactersContainer = ({ characters }) => {
+const CharactersContainer = ({ characters, addFavorite, removeFavorite }) => {
   return (
     <section className='characters-cont'>
       {characters.map((character, index) => {
@@ -15,6 +15,8 @@ const CharactersContainer = ({ characters }) => {
           homeworldName={homeworld.name}
           homeworldPop={homeworld.population}
           relatedFilms={relatedFilms}
+          addFavorite={addFavorite}
+          removeFavorite={removeFavorite}
         />
       })}
     </section>
