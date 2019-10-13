@@ -69,7 +69,7 @@ addFavorite = characterObj => {
           () => { return (<LoginForm addUserInfo={this.addUserInfo} />) }
         } />
         <Route exact path='/favorites' render={
-          () => { return (<Favorites characters={favorites} />) }
+          () => { return (<Favorites favorites={favorites} />) }
         } />
         <Route exact path='/movies' render={
           () => { return (<MoviesContainer films={films} getDetails={this.getDetails} />) }
