@@ -2,7 +2,7 @@ import React from 'react';
 import './CharacterCard.scss';
 import PropTypes from 'prop-types';
 
-const CharacterCard = ({ name, species, homeworldName, homeworldPop, relatedFilms, handleFavorite }) => {
+const CharacterCard = ({ name, species, homeworldName, homeworldPop, relatedFilms, handleFavorite, checkFavorites }) => {
     const filmsList = relatedFilms.map(film => {
         return (
             <li className='character-movie-list'>- {film}</li>
@@ -16,8 +16,12 @@ const CharacterCard = ({ name, species, homeworldName, homeworldPop, relatedFilm
             <h5 className='character-species'> homeworld: <span>{homeworldName}</span></h5>
             <h5 className='character-species'>population: <span>{homeworldPop}</span> </h5>
             <h5 className='character-rel-movies'>appears in: {filmsList}</h5>
-            <button className='button-favorite' onClick={() => handleFavorite({ name, species, homeworldName, homeworldPop, relatedFilms })}>
-                Add to favorites
+            <button
+                className='button-favorite'
+                onClick={() => handleFavorite({ name, species, homeworldName, homeworldPop, relatedFilms })}>
+                {!checkFavorites({ name, species, homeworldName, homeworldPop, relatedFilms })
+                    ? 'Add to favorites'
+                    : 'Remove from favorites'}
             </button>
         </article>
     )

@@ -3,7 +3,7 @@ import QuoteContainer from '../QuoteContainer/QuoteContainer';
 import CharactersContainer from '../CharactersContainer/CharactersContainer';
 import PropTypes from 'prop-types';
 
-const SelectedMovie = ({ movie, characters, handleFavorite }) => {
+const SelectedMovie = ({ movie, characters, handleFavorite, checkFavorites }) => {
   return (
     <main className='selected-movie'>
       <QuoteContainer movie={movie} />
@@ -12,7 +12,12 @@ const SelectedMovie = ({ movie, characters, handleFavorite }) => {
           className='loading-image'
           src="https://cdn.dribbble.com/users/361263/screenshots/3051905/imperial_emblem.gif"
           alt="" />
-        : <CharactersContainer characters={characters} handleFavorite={handleFavorite} />}
+        : <CharactersContainer
+          characters={characters}
+          handleFavorite={handleFavorite}
+          checkFavorites={checkFavorites}
+        />
+      }
     </main>
   )
 }

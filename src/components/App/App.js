@@ -60,20 +60,44 @@ class App extends Component {
     const { name, quote, skillLevel } = userInfo;
     return (
       <div className="App">
-        <NavBar name={name} quote={quote} skill={skillLevel} handleMovieChange={this.handleMovieChange} favorites={favorites} />
+        <NavBar
+          name={name}
+          quote={quote}
+          skill={skillLevel}
+          handleMovieChange={this.handleMovieChange}
+          favorites={favorites}
+        />
         <Route exact path='/' render={
           () => { return (<LoginForm addUserInfo={this.addUserInfo} />) }
         } />
         <Route exact path='/favorites' render={
-          () => { return (<Favorites favorites={favorites} handleFavorite={this.handleFavorite} />) }
+          () => {
+            return (
+              <Favorites
+                favorites={favorites}
+                handleFavorite={this.handleFavorite}
+                checkFavorites={this.checkFavorites}
+              />)
+          }
         } />
         <Route exact path='/movies' render={
-          () => { return (<MoviesContainer films={films} getDetails={this.getDetails} />) }
+          () => {
+            return (
+              <MoviesContainer
+                films={films}
+                getDetails={this.getDetails}
+              />)
+          }
         } />
         <Route exact path='/movies/:episode' render={({ match }) => {
           const { episode } = match.params
           const filteredMovie = films.find(film => film.episode_id === parseInt(episode))
-          return <SelectedMovie characters={currentCharacters} movie={filteredMovie} handleFavorite={this.handleFavorite} />
+          return <SelectedMovie
+            characters={currentCharacters}
+            movie={filteredMovie}
+            handleFavorite={this.handleFavorite}
+            checkFavorites={this.checkFavorites}
+          />
         }} />
       </div>
     );
