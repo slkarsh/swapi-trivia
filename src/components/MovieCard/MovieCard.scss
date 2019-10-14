@@ -1,6 +1,6 @@
 .movie-card {
     border-radius: 6px 6px 6px 6px;
-    background: linear-gradient(to top left, rgba(114, 114, 114, 0.158), #2d2d2d00);
+    background: linear-gradient(to bottom, rgb(85, 85, 85), #2d2d2d00);
     display: flex;
     border: solid rgb(143, 143, 143) 1px;
     box-shadow: 0 0 3px rgb(130, 130, 130);
@@ -9,6 +9,10 @@
     justify-content: space-between;
     transition: .2s;
     margin: 10px 50px;
+}
+
+::-webkit-scrollbar { 
+  display: none; 
 }
 
 .poster-image {
