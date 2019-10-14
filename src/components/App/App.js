@@ -55,6 +55,12 @@ class App extends Component {
       : this.setState({ favorites: editedFaves })
   }
 
+  wipeUserInfo = () => {
+    this.setState({
+      userInfo: []
+    })
+  }
+
   render() {
     const { currentCharacters, films, userInfo, favorites } = this.state;
     const { name, quote, skillLevel } = userInfo;
@@ -66,6 +72,7 @@ class App extends Component {
         skill={skillLevel}
         handleMovieChange={this.handleMovieChange}
         favorites={favorites}
+        wipeUserInfo={this.wipeUserInfo}
       />;
 
     return (
