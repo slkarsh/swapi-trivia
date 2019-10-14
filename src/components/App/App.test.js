@@ -21,4 +21,26 @@ describe('App', () => {
     // Expectation
     expect(wrapper.state('userInfo')).toEqual(expected);
   });
+
+  it('should return true when checkFavorites is called with the name of a character in the favorites array', () => {
+    const wrapper = shallow(<App />)
+    const mockFaves = [
+      {name: 'Leia', homeworld: 'here'},
+      {name: 'C3PO', homeworld: 'there'}
+    ]
+    wrapper.instance().setState({ favorites: mockFaves })
+
+    expect(wrapper.instance().checkFavorites({name: 'Leia', homeworld: 'here'})).toEqual(true)
+  })
+  it('should return false when checkFavorites is called with the name of a character not in the favorites array', () => {
+    const wrapper = shallow(<App />)
+    const mockFaves = [
+      {name: 'Leia', homeworld: 'here'},
+      {name: 'C3PO', homeworld: 'there'}
+    ]
+
+    wrapper.instance().setState({ favorites: mockFaves})
+
+    expect(wrapper.instance().checkFavorites({ name: 'Darth Vader', homeworld: 'hell'})).toEqual(false)
+  })
 })
