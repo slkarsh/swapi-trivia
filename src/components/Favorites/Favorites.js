@@ -4,7 +4,7 @@ import CharactersContainer from '../CharactersContainer/CharactersContainer';
 import PropTypes from 'prop-types';
 import CharacterCard from '../CharacterCard/CharacterCard';
 
-const Favorites = ({ favorites }) => {
+const Favorites = ({ favorites, handleFavorite }) => {
   return (
     <section>
       <h1>Favorite</h1>
@@ -17,6 +17,7 @@ const Favorites = ({ favorites }) => {
           homeworldName={homeworldName}
           homeworldPop={homeworldPop}
           relatedFilms={relatedFilms}
+          handleFavorite={handleFavorite}
         />
       })}
     </section>
