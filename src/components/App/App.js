@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './App.scss';
-import LoginForm from '../LoginForm/LoginForm'
 import { Route } from 'react-router-dom'
-import MoviesContainer from '../MoviesContainer/MoviesContainer';
+import './App.scss';
 import { fetchFilms, getCharacters } from '../../apis/apiCalls';
+import LoginForm from '../LoginForm/LoginForm'
+import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import NavBar from '../NavBar/NavBar';
 import SelectedMovie from '../SelectedMovie/SelectedMovie';
 import Favorites from '../Favorites/Favorites';
@@ -58,15 +58,19 @@ class App extends Component {
   render() {
     const { currentCharacters, films, userInfo, favorites } = this.state;
     const { name, quote, skillLevel } = userInfo;
+    const toggleNavBar =
+      !Array.isArray(userInfo) &&
+      <NavBar
+        name={name}
+        quote={quote}
+        skill={skillLevel}
+        handleMovieChange={this.handleMovieChange}
+        favorites={favorites}
+      />;
+
     return (
       <div className="App">
-        <NavBar
-          name={name}
-          quote={quote}
-          skill={skillLevel}
-          handleMovieChange={this.handleMovieChange}
-          favorites={favorites}
-        />
+        {toggleNavBar}
         <Route exact path='/' render={
           () => { return (<LoginForm addUserInfo={this.addUserInfo} />) }
         } />

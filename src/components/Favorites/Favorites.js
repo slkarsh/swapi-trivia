@@ -24,10 +24,9 @@ const Favorites = ({ favorites, handleFavorite, checkFavorites }) => {
   return (
     <section>
       <h1>Favorite Characters</h1>
-      {
-        favorites.length
-          ? favoriteCards
-          : <h2 className='add-characters'>Add characters in the movie section</h2>
+      {favorites.length
+        ? favoriteCards
+        : <h2 className='add-characters'>Add characters in the movie section</h2>
       }
     </section>
   )
