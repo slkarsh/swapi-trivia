@@ -35,8 +35,8 @@ const MovieCard = ({ title, episode, releaseYear, filmId, getDetails }) => {
       <h3 onClick={(e) => console.log(e.target.id)}>{title}</h3>
       <p className='movie-card-text'>Episode {episode}</p>
       <p className='movie-card-text'>{releaseYear.slice(0, 4)}</p>
-      <a className='text-link' href={images[episode][2]}>Buy Movie</a>
-      <a className='text-link' href={images[episode][1]}>Watch Trailer</a>
+      <a className='text-link' target="_blank" rel="noopener noreferrer" href={images[episode][2]} >Buy Movie</a>
+      <a className='text-link' target="_blank" rel="noopener noreferrer" href={images[episode][1]}>Watch Trailer</a>
       <Link to={`/movies/${episode}`} className='character-link'>View Characters</Link>
     </section>
   )
