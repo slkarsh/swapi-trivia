@@ -19,13 +19,16 @@ exports[`CharacterCard component should match the snapshot 1`] = `
     </span>
   </h5>
   <h5
-    className="character-homeworld"
+    className="character-species"
   >
-    homeworld: 
+     homeworld: 
     <span>
       Death Star
     </span>
-    <br />
+  </h5>
+  <h5
+    className="character-species"
+  >
     population: 
     <span>
       3
@@ -37,21 +40,11 @@ exports[`CharacterCard component should match the snapshot 1`] = `
   >
     appears in: 
   </h5>
-  <div
-    className="character-footer"
+  <button
+    className="button-favorite"
     onClick={[Function]}
   >
-    Add 
-    Darth Vader
-     to favorites
-  </div>
-  <div
-    className="footer-remove"
-    onClick={[Function]}
-  >
-    Remove 
-    Darth Vader
-     from favorites
-  </div>
+    Add to favorites
+  </button>
 </article>
 `;
