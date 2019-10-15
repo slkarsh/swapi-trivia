@@ -58,7 +58,7 @@ export const getHomeworld = homeworldUrl => {
     })
 }
 
-const getSpeciesData = speciesArray => {
+export const getSpeciesData = speciesArray => {
   const speciesInfo = speciesArray.map(speciesType => {
     return getSpecies(speciesType).then(name => name)
   })
@@ -71,7 +71,7 @@ export const getSpecies = speciesUrl => {
     .then(species => species.name)
 }
 
-const getRelatedFilms = filmsArray => {
+export const getRelatedFilms = filmsArray => {
   const relatedFilms = filmsArray.map(film => {
     return getFilmName(film).then(title => title)
   })
