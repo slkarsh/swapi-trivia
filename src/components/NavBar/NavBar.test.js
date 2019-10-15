@@ -22,20 +22,20 @@ describe('NavBar', () => {
   });
 
   //attempted test but this is a Router issue
-  // it('should call handleMovieChange when the movies link is clicked', () => {
-  //   const mockHandleMovieChange = jest.fn()
-  //   const wrapper = mount(<NavBar
-  //     name={'Darth Vader'}
-  //     quote={'I am your father.'}
-  //     skill={'Expert'}
-  //     favorites={0}
-  //     handleMovieChange={mockHandleMovieChange} 
-  //     />)
+  it('should call handleMovieChange when the movies link is clicked', () => {
+    const mockHandleMovieChange = jest.fn()
+    const wrapper = shallow(<NavBar
+      name={'Darth Vader'}
+      quote={'I am your father.'}
+      skill={'Expert'}
+      favorites={0}
+      handleMovieChange={mockHandleMovieChange} 
+      />)
 
-  //   wrapper.find(NavLink).first().simulate('click')
+    wrapper.find('.nav-link').first().simulate('click')
 
-  //   expect(wrapper.props.handleMovieChange).toHaveBeenCalled();
-  // })
+    expect(mockHandleMovieChange).toHaveBeenCalled();
+  })
 
 
 })
