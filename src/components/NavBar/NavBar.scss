@@ -14,6 +14,7 @@ header {
     border-bottom: 1px solid rgb(41, 41, 41);
     position: fixed;
     width: 100%;
+    z-index: 5;
 }
 
 .user-info-nav {
@@ -42,7 +43,7 @@ header {
 ul {
     display: flex;
     color: rgb(199, 199, 199);
-    padding: 0 80px;
+    padding: 0 130px;
     width: 100%;
     font-size: 18px;
     justify-content: space-between;
@@ -67,6 +68,7 @@ footer {
     position: fixed;
     width: 100%;
     top: 25px;
+    z-index: 5;
 }
 
 .nav-link {
@@ -74,10 +76,10 @@ footer {
     color: rgb(198, 198, 198);
     font-size: 20px;
     transition: .2s;
-    font-weight: 400;
+    font-weight: 600;
     margin-right: 30px;
     border-bottom: solid 2px rgba(0, 0, 0, 0);
-    padding-bottom: 4px;
+    padding-bottom: 2px;
 
     &:hover {
         color: rgb(255, 233, 70);
@@ -114,4 +116,24 @@ footer {
     color: rgb(255, 233, 70);
     transition: .2s;
     border-bottom: solid 2px rgb(255, 233, 70);
+}
+
+@media only screen and (max-width: 1000px) {
+  header {
+    height: 60px;
+  }
+
+  footer {
+    height: 35px;
+    top: 60px;
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  ul {
+    padding: 0 20px;
+  }
+  header {
+    height: 60px;
+  }
 }

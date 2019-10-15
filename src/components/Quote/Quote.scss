@@ -16,9 +16,11 @@
 }
 
 body {                                        
-  background-image: url('https://wallpaperplay.com/walls/full/9/d/f/104426.jpg');
+  background-image: url('../../images/background-image.jpg');
+  background-attachment: fixed;
   color: #E6CA3A;
 }
+
 
 .galaxy {
   display: flex;
@@ -37,7 +39,6 @@ body {
     font-family: 'Franklin Gothic Book',sans-serif;
     font-size: 30px;
     line-height: 50px;
-    text-indent: 50px;
 		margin: auto;
 		margin-right: 80px;
     text-align: justify;

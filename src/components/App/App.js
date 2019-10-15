@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import { Route, Redirect } from 'react-router-dom'
 import './App.scss';
-import LoginForm from '../LoginForm/LoginForm'
-import { Route } from 'react-router-dom'
-import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import { fetchFilms, getCharacters } from '../../apis/apiCalls';
+import LoginForm from '../LoginForm/LoginForm'
+import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import NavBar from '../NavBar/NavBar';
 import SelectedMovie from '../SelectedMovie/SelectedMovie';
 import Favorites from '../Favorites/Favorites';
@@ -55,25 +55,62 @@ class App extends Component {
       : this.setState({ favorites: editedFaves })
   }
 
+  wipeUserInfo = () => {
+    this.setState({
+      userInfo: []
+    })
+  }
+
   render() {
     const { currentCharacters, films, userInfo, favorites } = this.state;
     const { name, quote, skillLevel } = userInfo;
+    const toggleNavBar =
+      !Array.isArray(userInfo) &&
+      <NavBar
+        name={name}
+        quote={quote}
+        skill={skillLevel}
+        handleMovieChange={this.handleMovieChange}
+        favorites={favorites}
+        wipeUserInfo={this.wipeUserInfo}
+      />;
+
     return (
       <div className="App">
-        <NavBar name={name} quote={quote} skill={skillLevel} handleMovieChange={this.handleMovieChange} favorites={favorites} />
+        {toggleNavBar}
         <Route exact path='/' render={
           () => { return (<LoginForm addUserInfo={this.addUserInfo} />) }
         } />
         <Route exact path='/favorites' render={
-          () => { return (<Favorites favorites={favorites} handleFavorite={this.handleFavorite} />) }
+          () => {
+            return !name
+              ? <Redirect to='/' />
+              : <Favorites
+                favorites={favorites}
+                handleFavorite={this.handleFavorite}
+                checkFavorites={this.checkFavorites}
+              />
+          }
         } />
-        <Route exact path='/movies' render={
-          () => { return (<MoviesContainer films={films} getDetails={this.getDetails} />) }
+        <Route exact path='/movies' render={() => {
+          return !name
+            ? <Redirect to='/' />
+            : <MoviesContainer
+              films={films}
+              getDetails={this.getDetails} />
+        }
         } />
         <Route exact path='/movies/:episode' render={({ match }) => {
           const { episode } = match.params
           const filteredMovie = films.find(film => film.episode_id === parseInt(episode))
-          return <SelectedMovie characters={currentCharacters} movie={filteredMovie} handleFavorite={this.handleFavorite} />
+          return !name
+            ? <Redirect to='/' />
+            : <SelectedMovie
+              characters={currentCharacters}
+              movie={filteredMovie}
+              handleFavorite={this.handleFavorite}
+              checkFavorites={this.checkFavorites}
+            />
         }} />
       </div>
     );

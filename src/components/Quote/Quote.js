@@ -7,7 +7,7 @@ const Quote = ({ episode, title, opening }) => {
     <div className="galaxy">
       <div className="fall">
         <p>
-          <i>{episode}. {title.toUpperCase()}</i>
+          <i>{episode}: {title.toUpperCase()}</i>
           {opening}
         </p>
       </div>

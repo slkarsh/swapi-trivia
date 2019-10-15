@@ -3,7 +3,7 @@ import './NavBar.scss';
 import { NavLink, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const NavBar = ({ name, quote, skill, handleMovieChange, favorites }) => {
+const NavBar = ({ name, quote, skill, handleMovieChange, favorites, wipeUserInfo }) => {
   return (
     <nav>
       <header>
@@ -30,7 +30,7 @@ const NavBar = ({ name, quote, skill, handleMovieChange, favorites }) => {
             </li>
           </div>
           <li>
-            <Link to='/' className='nav-link-logout'>
+            <Link to='/' className='nav-link-logout' onClick={() => wipeUserInfo()}>
               Log out
                         </Link>
           </li>
