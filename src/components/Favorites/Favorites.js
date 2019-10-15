@@ -1,6 +1,5 @@
 import React from 'react';
 import './Favorites.scss';
-import CharactersContainer from '../CharactersContainer/CharactersContainer';
 import PropTypes from 'prop-types';
 import CharacterCard from '../CharacterCard/CharacterCard';
 
