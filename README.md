@@ -3,7 +3,7 @@
 ## Summary
 
 This project is sort of a Star Wars data bank using React.
-For this project, we wanted to use the popular Star Wars RESTful API '**SWAPI-Box**' to tap into a “black hole” of Star Wars data and be able to manipulate the data to display it to the user in an interesting and interactive way. You will be able to see movie cards for all the movies included in the SWAPI API, access each movies, to see their iconic crawling opening titles and a list of the ten most prominent characters of each movie with their information (name, homeworld, etc.) The user is also able to favorite individual characters that they can later checkout on the *Favorites* tab. 
+For this project, we wanted to use the popular Star Wars RESTful API '**SWAPI-Box**' to tap into a “black hole” of Star Wars data and be able to manipulate the data to display it to the user in an interesting and interactive way. You will be able to see movie cards for all the movies included in the SWAPI API, access each movies, to see their iconic crawling opening titles and a list of the ten most prominent characters of each movie with their information (name, homeworld, etc.) The user is also able to favorite individual characters that they can later check out on the *Favorites* tab. 
 
 The purpose of this project was to get more comfortable using new tools and keep practicing routing, props, state, testing, fetching nested promises, and asynchorous JS in general.
 
