@@ -30,7 +30,7 @@ class LoginForm extends Component {
   }
 
   render() {
-    const { name, quote, skillLevel } = this.state
+    const { name, quote } = this.state
     return (
       <form>
         <h1>STAR WARS HUB</h1>
