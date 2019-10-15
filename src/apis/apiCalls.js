@@ -37,6 +37,7 @@ export const getCharacters = filmUrl => {
     })
 }
 
+//tested
 export const getCharacter = characterUrl => {
   return fetch(characterUrl)
     .then(response => response.json())
