@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Star Wars Hub
 
-## Available Scripts
+## Summary
 
-In the project directory, you can run:
+This project is sort of a Star Wars data bank using React.
+For this project, we wanted to use the popular Star Wars RESTful API '**SWAPI-Box**' to tap into a “black hole” of Star Wars data and be able to manipulate the data to display it to the user in an interesting and interactive way. You will be able to see movie cards for all the movies in the API, access each movies' information, like buy and watch trailer links and well as the iconic crawling animations inside each movie. The user will also be able to see the list of 10 most important characters of each movie with their information (name, homeworld, other movies they star in) and the user is able to favorite names that they can see on the *Favorites* tab. 
 
-### `npm start`
+The purpose of this project was to get more comfortable using new tools and keep practicing routing, props, state, testing, fetching nested promises, and asynchorous JS in general.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Check it out in GitHub Pages [here](https://slkarsh.github.io/swapi-trivia/)!
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Screenshots
 
-### `npm test`
+![](https://user-images.githubusercontent.com/48811985/66860125-15121300-ef7c-11e9-90a5-0969294c1515.gif)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img width="1440" src="https://user-images.githubusercontent.com/48811985/66860177-2e1ac400-ef7c-11e9-8f2a-e4dd788582f0.png">
 
-### `npm run build`
+<img width="1440" src="https://user-images.githubusercontent.com/48811985/66860190-3bd04980-ef7c-11e9-9eb3-9df410330588.png">
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Learning goals
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Made informed UI/UX design decisions to create a user-friendly, web-responsive application.
+- Kept state based components to a minimum and leveraged more functional components.
+- Used a modular architecture for our file structure.
+- Became more familiar with promises, nested fetch requests, and handling the UI based on acceptance of data.
+- Also became familiar with routing (Link, NavLink, Redirect, HashRouter) and how to handle dynamic routes.
+- Used propTypes for every component receiving props.
+- Wrote tests for React components, asynchronous functionality, and route handling.
+- Deployed a React Router web-app to GitHub Pages.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Built with
+- React
+- React Router
+- SCSS
+- Jest
+- Enzyme
+- Sketch
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Testing Suite
+- Async methods and API calls testing
+- React unit testing
+- Snapshot testing
