@@ -5,6 +5,8 @@ exports[`Favorites component should match the snapshot 1`] = `
   <h1>
     Favorite
   </h1>
-  <CharactersContainer />
+  <CharacterCard
+    key="0"
+  />
 </section>
 `;
