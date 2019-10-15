@@ -43,4 +43,5 @@ describe('CharacterCard', () => {
     expect(handleFavorite).toHaveBeenCalled();
     expect(checkFavorites).toHaveBeenCalled();
   })
+
 })
