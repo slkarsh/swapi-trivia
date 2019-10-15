@@ -52,13 +52,34 @@ describe('LoginForm', () => {
 
   it('should call the handleClick prop with the forms information when clicked', () => {
     // Setup
-    const addUserInfoMock = jest.fn();
-    const wrapper = shallow(<LoginForm addUserInfo={addUserInfoMock} />);
+    const wrapper = shallow(<LoginForm />);
+    wrapper.instance().handleClick = jest.fn();
 
     // Execution
     wrapper.find('button').simulate('click');
 
     // Expectation
-    expect(addUserInfoMock).toHaveBeenCalled();
+    expect(wrapper.instance().handleClick).toHaveBeenCalled();
   });
+
+  it('should call the onChange method when user types', () => {
+    // Setup
+    const wrapper = shallow(<LoginForm />);
+    const NameEvent = { target: { name: 'name', value: 'A' } };
+    const QuoteEvent = { target: { name: 'quote', value: 'B' } };
+    const SkillEvent = { target: { name: 'quote', value: 'B' } };
+    wrapper.instance().handleChange = jest.fn();
+
+    // Execution
+    wrapper.find('[name="name"]').simulate('change', NameEvent);
+    wrapper.find('[name="quote"]').simulate('change', QuoteEvent);
+    wrapper.find('[name="skillLevel"]').simulate('change', SkillEvent);
+
+    // Expectation
+    expect(wrapper.instance().handleChange).toHaveBeenCalledWith(NameEvent);
+    expect(wrapper.instance().handleChange).toHaveBeenCalledWith(QuoteEvent);
+    expect(wrapper.instance().handleChange).toHaveBeenCalledWith(SkillEvent);
+  });
+
 })
+

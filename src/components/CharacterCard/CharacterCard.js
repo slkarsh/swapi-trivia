@@ -11,6 +11,11 @@ const CharacterCard = ({ name, species, homeworldName, homeworldPop, relatedFilm
       </li>
     )
   })
+
+  const componentHandler = checkFavorites({ name, species, homeworldName, homeworldPop, relatedFilms })
+    ? 'Remove from favorites'
+    : 'Add to favorites'
+
   return (
     <article className='character-info'>
       <h5 className='character-name'>{name}</h5>
@@ -22,9 +27,7 @@ const CharacterCard = ({ name, species, homeworldName, homeworldPop, relatedFilm
       <button
         className='button-favorite'
         onClick={() => handleFavorite({ name, species, homeworldName, homeworldPop, relatedFilms })}>
-        {!checkFavorites({ name, species, homeworldName, homeworldPop, relatedFilms })
-          ? 'Add to favorites'
-          : 'Remove from favorites'}
+        {componentHandler}
       </button>
     </article>
   )
@@ -36,6 +39,8 @@ CharacterCard.propTypes = {
   homeworldName: PropTypes.string,
   homeworldPop: PropTypes.string,
   relatedFilms: PropTypes.array,
+  handleFavorite: PropTypes.func,
+  checkFavorites: PropTypes.func
 };
 
 export default CharacterCard;
