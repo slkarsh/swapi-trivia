@@ -65,7 +65,7 @@ const getSpeciesData = speciesArray => {
   return Promise.all(speciesInfo)
 }
 
-const getSpecies = speciesUrl => {
+export const getSpecies = speciesUrl => {
   return fetch(speciesUrl)
     .then(response => response.json())
     .then(species => species.name)
@@ -78,7 +78,7 @@ const getRelatedFilms = filmsArray => {
   return Promise.all(relatedFilms)
 }
 
-const getFilmName = filmUrl => {
+export const getFilmName = filmUrl => {
   return fetch(filmUrl)
     .then(response => response.json())
     .then(film => film.title)

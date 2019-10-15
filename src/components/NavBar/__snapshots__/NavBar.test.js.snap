@@ -38,20 +38,21 @@ exports[`NavBar component should match the snapshot 1`] = `
     <ul>
       <div>
         <li>
-          <Link
+          <NavLink
             className="nav-link"
+            onClick={[Function]}
             to="/movies"
           >
             Movies
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link
+          <NavLink
             className="nav-link"
             to="/favorites"
           >
-            Favorites
-          </Link>
+            Favorites: 
+          </NavLink>
         </li>
       </div>
       <li>

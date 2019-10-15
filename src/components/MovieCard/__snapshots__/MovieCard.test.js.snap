@@ -27,6 +27,18 @@ exports[`MovieCard component should match the snapshot 1`] = `
   >
     2099
   </p>
+  <a
+    className="text-link"
+    href="https://www.amazon.com/Star-Wars-Episode-Revenge-Widescreen/dp/B00005JLXH"
+  >
+    Buy Movie
+  </a>
+  <a
+    className="text-link"
+    href="https://www.youtube.com/watch?v=5UnjrG_N8hU"
+  >
+    Watch Trailer
+  </a>
   <Link
     className="character-link"
     to="/movies/3"
