@@ -2,8 +2,7 @@
 
 exports[`MovieCard component should match the snapshot 1`] = `
 <section
-  className="movie-card movie-card-3"
-  classNameid={3}
+  className="movie-card movie-card-3 {filmId}"
   onClick={[Function]}
 >
   <img
@@ -30,12 +29,16 @@ exports[`MovieCard component should match the snapshot 1`] = `
   <a
     className="text-link"
     href="https://www.amazon.com/Star-Wars-Episode-Revenge-Widescreen/dp/B00005JLXH"
+    rel="noopener noreferrer"
+    target="_blank"
   >
     Buy Movie
   </a>
   <a
     className="text-link"
     href="https://www.youtube.com/watch?v=5UnjrG_N8hU"
+    rel="noopener noreferrer"
+    target="_blank"
   >
     Watch Trailer
   </a>

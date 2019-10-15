@@ -49,7 +49,7 @@ export const getCharacter = characterUrl => {
     })
 }
 
-const getHomeworld = homeworldUrl => {
+export const getHomeworld = homeworldUrl => {
   return fetch(homeworldUrl)
     .then(response => response.json())
     .then(homeworld => {

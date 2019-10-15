@@ -58,6 +58,7 @@ exports[`NavBar component should match the snapshot 1`] = `
       <li>
         <Link
           className="nav-link-logout"
+          onClick={[Function]}
           to="/"
         >
           Log out
