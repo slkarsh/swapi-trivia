@@ -1,4 +1,4 @@
-# Star Wars Hub
+# Star Wars Hub: A React Web App
 
 ## Summary
 
