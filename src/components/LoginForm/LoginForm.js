@@ -20,8 +20,13 @@ class LoginForm extends Component {
     })
   }
 
-  handleClick = () => {
-    this.props.addUserInfo(this.state)
+  handleClick = (event) => {
+    const { name, quote, skillLevel } = this.state;
+    if (!name || !quote || !skillLevel) {
+      event.preventDefault()
+    } else {
+      this.props.addUserInfo(this.state)
+    }
   }
 
   render() {
@@ -60,7 +65,11 @@ class LoginForm extends Component {
         </select>
         <div>
           <Link to="/movies" >
-            <button type='button' onClick={this.handleClick}>Submit</button>
+            <button
+              type='button'
+              onClick={(event) => this.handleClick(event)}>
+              Submit
+            </button>
           </Link>
         </div>
       </form >
