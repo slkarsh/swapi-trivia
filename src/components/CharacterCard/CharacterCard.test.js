@@ -3,11 +3,10 @@ import { shallow } from 'enzyme';
 import CharacterCard from './CharacterCard';
 
 describe('CharacterCard', () => {
-  
+
   it('component should match the snapshot', () => {
-    const addFavorite = jest.fn();
-    const removeFavorite = jest.fn();
-    const mockHandleFavorite = jest.fn();
+    const checkFavorites = jest.fn();
+    const handleFavorite = jest.fn();
     const wrapper = shallow(
       <CharacterCard
         key={3}
@@ -16,14 +15,16 @@ describe('CharacterCard', () => {
         homeworldName={'Death Star'}
         homeworldPop={'3'}
         relatedFilms={[]}
-        handleFavorite={mockHandleFavorite}
+        handleFavorite={handleFavorite}
+        checkFavorites={checkFavorites}
       />
     )
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should call the handleFavorite prop when the favorite button is clicked', () => {
-    const mockHandleFavorite = jest.fn();
+    const handleFavorite = jest.fn();
+    const checkFavorites = jest.fn();
     const wrapper = shallow(
       <CharacterCard
         key={3}
@@ -32,12 +33,14 @@ describe('CharacterCard', () => {
         homeworldName={'Death Star'}
         homeworldPop={'3'}
         relatedFilms={[]}
-        handleFavorite={mockHandleFavorite}
+        handleFavorite={handleFavorite}
+        checkFavorites={checkFavorites}
       />
     )
 
     wrapper.find('button').simulate('click')
 
-    expect(mockHandleFavorite).toHaveBeenCalled();
+    expect(handleFavorite).toHaveBeenCalled();
+    expect(checkFavorites).toHaveBeenCalled();
   })
 })

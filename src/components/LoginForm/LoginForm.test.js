@@ -52,13 +52,13 @@ describe('LoginForm', () => {
 
   it('should call the handleClick prop with the forms information when clicked', () => {
     // Setup
-    const addUserInfoMock = jest.fn();
-    const wrapper = shallow(<LoginForm addUserInfo={addUserInfoMock} />);
+    const wrapper = shallow(<LoginForm />);
+    wrapper.instance().handleClick = jest.fn();
 
     // Execution
     wrapper.find('button').simulate('click');
 
     // Expectation
-    expect(addUserInfoMock).toHaveBeenCalled();
+    expect(wrapper.instance().handleClick).toHaveBeenCalled();
   });
 })

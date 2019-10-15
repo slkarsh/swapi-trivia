@@ -37,9 +37,9 @@ class App extends Component {
       .catch(error => console.log('error', error))
   }
 
-  checkFavorites = characterObj => {
+  checkFavorites = (characterObject) => {
     let faveNames = this.state.favorites.map(favorite => favorite.name)
-    return faveNames.includes(characterObj.name)
+    return faveNames.includes(characterObject.name)
   }
 
   handleMovieChange = () => {
@@ -120,6 +120,10 @@ class App extends Component {
 App.propTypes = {
   addUserInfo: PropTypes.func,
   getDetails: PropTypes.func,
+  checkFavorites: PropTypes.func,
+  handleFavorite: PropTypes.func,
+  handleMovieChange: PropTypes.func,
+  wipeUserInfo: PropTypes.func,
   name: PropTypes.string,
   quote: PropTypes.string,
   skillLevel: PropTypes.string,
