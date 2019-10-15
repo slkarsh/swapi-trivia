@@ -1,7 +1,6 @@
 h1 {
   font-size: 70px;
   color: rgb(255, 225, 0);
-  font-family: 'SF Distant Galaxy'
 }
 
 h4 {
@@ -133,4 +132,8 @@ form {
       outline: none;
     }
   }
+}
+
+.error-message {
+  border: 2px solid rgb(255, 62, 62);
 }

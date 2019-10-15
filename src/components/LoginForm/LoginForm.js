@@ -30,10 +30,10 @@ class LoginForm extends Component {
   }
 
   render() {
-    const { name, quote } = this.state
+    const { name, quote, skillLevel } = this.state
     return (
       <form>
-        <h1>SWAPI Trivia</h1>
+        <h1>STAR WARS HUB</h1>
         <h4>Join the force</h4>
         <label>Name</label>
         <input
@@ -59,9 +59,9 @@ class LoginForm extends Component {
           onChange={(e) => this.handleChange(e)}
         >
           <option value=''>Select Skill Level</option>
-          <option value='Novice'>Novice</option>
-          <option value='Intermediate'>Intermediate</option>
-          <option value='Expert'>Expert</option>
+          <option value='Jedi Initiate'>Jedi Initiate</option>
+          <option value='Jedi Knight'>Jedi Knight</option>
+          <option value='Jedi Master'>Jedi Master</option>
         </select>
         <div>
           <Link to="/movies" >
