@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/swapi-trivia/static/css/main.fa3f97e5.chunk.css",
-    "main.js": "/swapi-trivia/static/js/main.bb2f1d20.chunk.js",
-    "main.js.map": "/swapi-trivia/static/js/main.bb2f1d20.chunk.js.map",
+    "main.js": "/swapi-trivia/static/js/main.7b2ebf73.chunk.js",
+    "main.js.map": "/swapi-trivia/static/js/main.7b2ebf73.chunk.js.map",
     "runtime-main.js": "/swapi-trivia/static/js/runtime-main.ac423d25.js",
     "runtime-main.js.map": "/swapi-trivia/static/js/runtime-main.ac423d25.js.map",
-    "static/js/2.d843ecfb.chunk.js": "/swapi-trivia/static/js/2.d843ecfb.chunk.js",
-    "static/js/2.d843ecfb.chunk.js.map": "/swapi-trivia/static/js/2.d843ecfb.chunk.js.map",
+    "static/js/2.3f2b180c.chunk.js": "/swapi-trivia/static/js/2.3f2b180c.chunk.js",
+    "static/js/2.3f2b180c.chunk.js.map": "/swapi-trivia/static/js/2.3f2b180c.chunk.js.map",
     "index.html": "/swapi-trivia/index.html",
-    "precache-manifest.26bf7c33b35555ea7b9828cb8a4c4541.js": "/swapi-trivia/precache-manifest.26bf7c33b35555ea7b9828cb8a4c4541.js",
+    "precache-manifest.cb648253051f4a208b83955d11775a14.js": "/swapi-trivia/precache-manifest.cb648253051f4a208b83955d11775a14.js",
     "service-worker.js": "/swapi-trivia/service-worker.js",
     "static/css/main.fa3f97e5.chunk.css.map": "/swapi-trivia/static/css/main.fa3f97e5.chunk.css.map",
     "static/media/1.jpg": "/swapi-trivia/static/media/1.6b7da538.jpg",
@@ -22,8 +22,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.ac423d25.js",
-    "static/js/2.d843ecfb.chunk.js",
+    "static/js/2.3f2b180c.chunk.js",
     "static/css/main.fa3f97e5.chunk.css",
-    "static/js/main.bb2f1d20.chunk.js"
+    "static/js/main.7b2ebf73.chunk.js"
   ]
 }
