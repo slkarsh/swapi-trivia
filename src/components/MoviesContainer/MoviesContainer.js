@@ -26,7 +26,8 @@ MoviesContainer.propTypes = {
   title: PropTypes.string,
   episode_id: PropTypes.string,
   release_date: PropTypes.number,
-  filmId: PropTypes.number
+  filmId: PropTypes.number,
+  getDetails: PropTypes.func
 };
 
 export default MoviesContainer;
