@@ -3,7 +3,7 @@
 exports[`Favorites component should match the snapshot 1`] = `
 <section>
   <h1>
-    Favorite
+    Favorite Characters
   </h1>
   <CharacterCard
     key="0"
