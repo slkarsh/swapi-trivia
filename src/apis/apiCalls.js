@@ -49,6 +49,7 @@ export const getCharacter = characterUrl => {
     })
 }
 
+//tested
 export const getHomeworld = homeworldUrl => {
   return fetch(homeworldUrl)
     .then(response => response.json())
@@ -57,7 +58,7 @@ export const getHomeworld = homeworldUrl => {
       return { name, population }
     })
 }
-
+//tested
 export const getSpeciesData = speciesArray => {
   const speciesInfo = speciesArray.map(speciesType => {
     return getSpecies(speciesType).then(name => name)
@@ -65,12 +66,14 @@ export const getSpeciesData = speciesArray => {
   return Promise.all(speciesInfo)
 }
 
+//tested
 export const getSpecies = speciesUrl => {
   return fetch(speciesUrl)
     .then(response => response.json())
     .then(species => species.name)
 }
 
+//tested
 export const getRelatedFilms = filmsArray => {
   const relatedFilms = filmsArray.map(film => {
     return getFilmName(film).then(title => title)
@@ -78,6 +81,7 @@ export const getRelatedFilms = filmsArray => {
   return Promise.all(relatedFilms)
 }
 
+//tested
 export const getFilmName = filmUrl => {
   return fetch(filmUrl)
     .then(response => response.json())

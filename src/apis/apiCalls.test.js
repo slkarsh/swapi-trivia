@@ -1,4 +1,4 @@
-import { getSpecies, getFilmName, getHomeworld, fetchFilms, getRelatedFilms, getSpeciesData } from './apiCalls'
+import { getSpecies, getFilmName, getHomeworld, fetchFilms, getRelatedFilms, getSpeciesData, getCharacter } from './apiCalls'
 
 describe('getSpecies', () => {
   const mockResponse = {
@@ -770,6 +770,63 @@ describe('getFilmName', () => {
       const getSpecies = jest.fn().mockImplementation(() => Promise.resolve("human"))
 
       expect(getSpeciesData(['wwww.fakeulr.com'])).resolves.toEqual(["human"])
+    })
+  })
+
+  describe('getCharacter', () => {
+
+    const mockResponse = {
+      "name": "Luke Skywalker", 
+      "height": "172", 
+      "mass": "77", 
+      "hair_color": "blond", 
+      "skin_color": "fair", 
+      "eye_color": "blue", 
+      "birth_year": "19BBY", 
+      "gender": "male", 
+      "homeworld": "https://swapi.co/api/planets/1/", 
+      "films": [
+          "https://swapi.co/api/films/2/", 
+          "https://swapi.co/api/films/6/", 
+          "https://swapi.co/api/films/3/", 
+          "https://swapi.co/api/films/1/", 
+          "https://swapi.co/api/films/7/"
+      ], 
+      "species": [
+          "https://swapi.co/api/species/1/"
+      ], 
+      "vehicles": [
+          "https://swapi.co/api/vehicles/14/", 
+          "https://swapi.co/api/vehicles/30/"
+      ], 
+      "starships": [
+          "https://swapi.co/api/starships/12/", 
+          "https://swapi.co/api/starships/22/"
+      ], 
+      "created": "2014-12-09T13:50:51.644000Z", 
+      "edited": "2014-12-20T21:17:56.891000Z", 
+      "url": "https://swapi.co/api/people/1/"
+  }
+
+    it('should return an array containing character-specific information', () => {
+      const getHomeworld = jest.fn().mockImplementation(() => Promise.resolve({name: 'Tatooine',population: 2000}))
+      const getSpeciesData = jest.fn().mockImplementation(() => Promise.resolve(["human"]))
+      const getRelatedFilms = jest.fn().mockImplementation(() => Promise.resolve(['The Phantom Menace', 'The Empire Strikes Back']))
+
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          json: Promise.resolve(mockResponse)
+        })
+      })
+
+      expect(getCharacter('www.fake.com')).resolves.toEqual(
+        [
+          mockResponse.name, 
+          {name: 'Tatooine',population: 2000},
+          "human", 
+          ["The Phantom Menace", "The Empire Strikes Back"]
+        ]
+      )
     })
   })
   // describe('getCharacters', () => {
