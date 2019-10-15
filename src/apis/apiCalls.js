@@ -14,7 +14,6 @@ export const fetchFilms = () => {
         }
         return { title, episode_id, release_date, filmId, opening_crawl }
       }).sort((a, b) => a.episode_id - b.episode_id)
-      console.log('film data', filmData)
       return filmData;
     })
 }
@@ -58,12 +57,13 @@ export const getHomeworld = homeworldUrl => {
     })
 }
 
-const getSpeciesData = speciesArray => {
+export const getSpeciesData = speciesArray => {
   const speciesInfo = speciesArray.map(speciesType => {
     return getSpecies(speciesType).then(name => name)
   })
   return Promise.all(speciesInfo)
 }
+
 
 export const getSpecies = speciesUrl => {
   return fetch(speciesUrl)
@@ -71,12 +71,14 @@ export const getSpecies = speciesUrl => {
     .then(species => species.name)
 }
 
-const getRelatedFilms = filmsArray => {
+
+export const getRelatedFilms = filmsArray => {
   const relatedFilms = filmsArray.map(film => {
     return getFilmName(film).then(title => title)
   })
   return Promise.all(relatedFilms)
 }
+
 
 export const getFilmName = filmUrl => {
   return fetch(filmUrl)

@@ -17,6 +17,14 @@ The purpose of this project was to get more comfortable using new tools and keep
 
 <img width="1440" src="https://user-images.githubusercontent.com/48811985/66860190-3bd04980-ef7c-11e9-9eb3-9df410330588.png">
 
+## To Use
+
+`git clone` this repository
+
+Run `npm install` to install all dependencies require for the app
+
+Run `npm start` to launch the program from your command line, and have fun!
+
 ## Learning goals
 
 - Made informed UI/UX design decisions to create a user-friendly, web-responsive application.
