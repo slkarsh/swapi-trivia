@@ -1,5 +1,10 @@
 # Star Wars Hub: A React Web App
 
+## Developers
+
+- [@slkarsh](https://www.github.com/slkarsh)
+- [@edwindelbosque](https://www.github.com/edwindelbosque)
+
 ## Summary
 
 This project is sort of a Star Wars data bank using React.
