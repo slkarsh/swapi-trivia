@@ -33,7 +33,6 @@ class App extends Component {
   getDetails = (id) => {
     return getCharacters(`https://swapi.co/api/films/${id}`)
       .then(response => this.setState({ currentCharacters: response }))
-      .then(() => console.log('done!'))
       .catch(error => console.log('error', error))
   }
 
